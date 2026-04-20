@@ -480,6 +480,7 @@ html[data-theme="light"] .page-grid {
   font-size: 1rem;
   line-height: 1.75;
 }
+
 .hero-links {
   display: flex;
   flex-wrap: wrap;
@@ -514,20 +515,23 @@ html[data-theme="light"] .page-grid {
 .profile-shell {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
-.profile-image:"",
+.profile-image,
 .profile-fallback {
-  width: 92px;
-  height: 92px;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
   border-radius: 24px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .profile-image {
   object-fit: cover;
+  object-position: center top;
   background: var(--surface-strong);
 }
 
