@@ -12,14 +12,9 @@ window.siteData = {
     "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
   summary:
     "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures.",    
-    focusSummary:
-    "Current focus: reasoning in language models, especially through RL post-training, test-time recursion, and methods that recover learning signal on hard tasks.",    location: "Zurich, Switzerland",
-    availability: "Open to full-time roles",
-    meta: [
-      "MSc Computer Science at ETH Zurich (expected Feb 2026)",
-      "BSc Mathematics from ETH Zurich",
-      "Open to full-time ML research or ML engineering roles"
-    ],
+    focusSummary: "Reasoning in Language Models via Reinforcement Learning and Test-Time Recursion.",
+    availability: "ML Research Engineer, ML Research Scientist",
+    location: "Swiss, US",    
     profileImage: "/assets/guivff_pic.jpg"
   },
 
