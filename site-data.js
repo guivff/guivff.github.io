@@ -20,7 +20,7 @@ window.siteData = {
       "BSc Mathematics from ETH Zurich",
       "Open to full-time ML research or ML engineering roles"
     ],
-    profileImage: ""
+    profileImage: "/assets/guivff_pic.jpg"
   },
 
   links: [
