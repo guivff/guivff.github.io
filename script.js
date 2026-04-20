@@ -115,9 +115,7 @@
     });
 
     const focusTags = $("#focus-tags");
-    safeArray(data.interests).slice(0, 6).forEach((interest) => {
-      focusTags.appendChild(create("span", "tag", interest));
-    });
+    focus.innerHTML = "";
 
     const imagePath = personal?.profileImage;
     const profileImage = $("#profile-image");
