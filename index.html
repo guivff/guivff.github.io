@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name | ML Research & Engineering</title>
+    <meta
+      name="description"
+      content="Personal website for an ETH Zurich AI master's student interested in ML research and ML engineering."
+    />
+    <meta name="theme-color" content="#f4f7fb" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="site-data.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+    <div class="page-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="Homepage">
+          <span class="brand-mark" id="brand-mark">YN</span>
+          <span class="brand-text" id="brand-text">Your Name</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-wrap"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-wrap" id="nav-wrap">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#notes">Notes</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="header-actions">
+            <button
+              class="icon-button"
+              id="theme-toggle"
+              type="button"
+              aria-label="Toggle theme"
+              title="Toggle theme"
+            >
+              <span aria-hidden="true">◐</span>
+            </button>
+            <a class="button button--ghost header-cv-link" id="header-cv-link" href="#"
+              >CV</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" id="hero-eyebrow">
+              ETH Zurich · AI · ML Research & Engineering
+            </p>
+            <h1 id="hero-name">Your Name</h1>
+            <p class="hero-tagline" id="hero-tagline">
+              Master's student in AI with a mathematics background, building toward ML research and research engineering.
+            </p>
+            <p class="hero-summary" id="hero-summary">
+              I like working across theory, experiments, and engineering — from designing models and evaluations to building reliable ML systems.
+            </p>
+
+            <div class="hero-links" id="hero-links"></div>
+            <ul class="hero-meta" id="hero-meta"></ul>
+          </div>
+
+          <aside class="hero-panel card reveal">
+            <div class="profile-shell" id="profile-shell">
+              <img
+                id="profile-image"
+                class="profile-image"
+                alt="Profile photo"
+                hidden
+              />
+              <div class="profile-fallback" id="profile-fallback">YN</div>
+            </div>
+
+            <div class="spotlight">
+              <h2>Current focus</h2>
+              <p id="focus-summary">
+                Research-heavy engineering in machine learning, including training, evaluation, and reliable deployment.
+              </p>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <span class="mini-stat__label">Status</span>
+                <strong id="availability-text">Open to full-time roles</strong>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat__label">Based in</span>
+                <strong id="location-text">Zurich, Switzerland</strong>
+              </div>
+            </div>
+
+            <div class="tag-list" id="focus-tags"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--compact">
+        <div class="container">
+          <div class="info-grid" id="highlights-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">About</p>
+            <h2>Mathematical thinking + practical ML building</h2>
+            <p class="section-lead">
+              A compact overview of background, interests, and the kinds of ML problems I like to work on.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card reveal">
+              <div class="prose" id="about-copy"></div>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card-title">Core interests</h3>
+              <div class="tag-list tag-list--large" id="interest-tags"></div>
+
+              <div class="divider"></div>
+
+              <h3 class="card-title">What I want to work on</h3>
+              <ul class="clean-list" id="goal-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">Selected projects</p>
+            <h2>Research credibility with engineering depth</h2>
+            <p class="section-lead">
+              Current research first, followed by selected academic and personal projects with reports, slides, or code where available.
+            </p>
+          </div>
+
+          <div class="projects-group reveal" id="featured-projects-block">
+            <div class="projects-subhead">
+              <h3>Research Projects</h3>
+              <p class="muted">Current, thesis-related, and research-facing work that should be visible first.</p>
+            </div>
+            <div class="card-grid card-grid--featured" id="featured-projects-grid"></div>
+          </div>
+
+          <div class="projects-group reveal" id="other-projects-block">
+            <div class="projects-subhead">
+              <h3>Selected Academic &amp; Personal Projects</h3>
+              <p class="muted">Course and independent projects that still show research depth, modeling breadth, and strong implementation work.</p>
+            </div>
+            <div class="card-grid card-grid--projects" id="other-projects-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">Research</p>
+            <h2>Thesis, publications, and active directions</h2>
+            <p class="section-lead">
+              A concise view of ongoing work, thesis directions, and public write-ups.
+            </p>
+          </div>
+
+          <div class="research-grid">
+            <div class="card reveal">
+              <h3 class="card-title" id="thesis-title">Master's thesis / current research</h3>
+              <p class="muted" id="thesis-summary">
+                Replace this with a concise thesis description: what question you study, why it matters, and how you approach it.
+              </p>
+              <ul class="clean-list" id="thesis-bullets"></ul>
+            </div>
+
+            <div class="card reveal" id="publications-card">
+              <h3 class="card-title">Selected publications / write-ups</h3>
+              <div class="stack-list" id="publications-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">Experience</p>
+            <h2>Evidence of how you work</h2>
+            <p class="section-lead">
+              A compact timeline of research, teaching, and industry work.
+            </p>
+          </div>
+
+          <div class="timeline" id="experience-timeline"></div>
+        </div>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">Notes</p>
+            <h2>Optional writing section</h2>
+            <p class="section-lead">
+              Optional technical notes and short write-ups.
+            </p>
+          </div>
+
+          <div class="card-grid" id="notes-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-card card reveal">
+            <div>
+              <p class="section-kicker">Contact</p>
+              <h2>Let's talk</h2>
+              <p class="contact-copy" id="contact-copy">
+                I'm interested in ML research, research engineer, applied scientist, and ML engineer roles.
+              </p>
+            </div>
+
+            <div class="hero-links" id="contact-links"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p id="footer-text">© Your Name</p>
+        <p class="footer-note">
+          Built with plain HTML, CSS, and JavaScript for easy GitHub Pages deployment.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

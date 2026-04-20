@@ -1,0 +1,2 @@
+Put optional images here, e.g. assets/profile.jpg
+Then set profileImage in site-data.js.
