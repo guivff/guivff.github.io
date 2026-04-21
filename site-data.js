@@ -9,7 +9,7 @@ window.siteData = {
     name: "Guiv Farmanfarmaian",
     shortName: "GF",
     eyebrow: "ETH Zurich · Machine Intelligence · Data Analytics Lab",
-    tagline: "ML Research Engineer / ML Research Scientist",
+    tagline: "",
     focusSummary:
       "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
     heroFacts: [
@@ -43,12 +43,13 @@ window.siteData = {
   highlights: [
     { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
     { label: "Background", value: "BSc Mathematics" },
-    { label: "Current thesis", value: "Improving LLM Reasoning" },
+    { label: "Current thesis", value: "Reasoning in LLMs: RLVR & Test-Time Recursion" },
     { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
   ],
 
   about: [
-    "I recently completed a Master’s in Computer Science at ETH Zurich, specializing in Machine Intelligence, and conduct research in the Data Analytics Lab under the supervision of Prof. Thomas Hofmann and Dr. Amir Joudaki. Before that, I worked in Prof. Roger Wattenhofer’s Distributed Computing Group and earned a Bachelor’s degree in Mathematics from ETH Zurich. My current research focuses on reasoning in language models through reinforcement learning, especially on addressing limitations of GRPO. More broadly, I am interested in sample-efficient learning, test-time compute, and continual learning."
+    "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
+    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
   ],
 
   interests: [
@@ -69,7 +70,7 @@ window.siteData = {
 
   projects: [
     {
-      title: "Master’s Thesis Research — Improving LLM Reasoning on Challenging Problems",
+      title: "Master’s Thesis Research — Reasoning in LLMs: RLVR & Test-Time Recursion",
       category: "ETH Zurich research · Data Analytics Lab",
       period: "2025 – Present",
       summary:
@@ -159,7 +160,7 @@ window.siteData = {
   ],
 
   research: {
-    thesisTitle: "Master's Thesis — Improving LLM Reasoning on Challenging Problems",
+    thesisTitle: "Master's Thesis — Reasoning in LLMs: RLVR & Test-Time Recursion",
     thesisSummary:
       "My current thesis at ETH Zurich studies how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme is how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.",
     bullets: [

@@ -96,7 +96,15 @@
 
     setText("#hero-eyebrow", personal?.eyebrow);
     setText("#hero-name", name);
-    setText("#hero-tagline", personal?.tagline);
+    const heroTagline = $("#hero-tagline");
+    if (heroTagline) {
+      if (personal?.tagline) {
+        heroTagline.textContent = personal.tagline;
+        heroTagline.hidden = false;
+      } else {
+        heroTagline.hidden = true;
+      }
+    }
     setText("#focus-summary", personal?.focusSummary);
 
     if (cvLink) setHref("#header-cv-link", cvLink.href);
@@ -129,11 +137,11 @@
     const profileImage = $("#profile-image");
     const profileFallback = $("#profile-fallback");
 
-    profileFallback.textContent = shortName;
-    if (imagePath) {
+    if (profileFallback) profileFallback.textContent = shortName;
+    if (imagePath && profileImage) {
       profileImage.src = imagePath;
       profileImage.hidden = false;
-      profileFallback.hidden = true;
+      if (profileFallback) profileFallback.hidden = true;
     }
 
     $("#footer-text").textContent = data.footer?.text || `© ${name}`;
@@ -154,14 +162,18 @@
 
   function renderAbout() {
     const interestTags = $("#interest-tags");
-    safeArray(data.interests).forEach((interest) => {
-      interestTags.appendChild(create("span", "tag", interest));
-    });
+    if (interestTags) {
+      safeArray(data.interests).forEach((interest) => {
+        interestTags.appendChild(create("span", "tag", interest));
+      });
+    }
 
     const goalList = $("#goal-list");
-    safeArray(data.goals).forEach((goal) => {
-      goalList.appendChild(create("li", "", goal));
-    });
+    if (goalList) {
+      safeArray(data.goals).forEach((goal) => {
+        goalList.appendChild(create("li", "", goal));
+      });
+    }
   }
 
   function renderProjectList(projects, grid) {

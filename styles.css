@@ -429,7 +429,7 @@ html[data-theme="light"] .page-grid {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
   gap: 2.4rem;
   align-items: start;
 }
@@ -458,13 +458,13 @@ html[data-theme="light"] .page-grid {
 }
 
 .hero-copy {
-  max-width: 46rem;
+  max-width: 50rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 4.25rem);
-  line-height: 0.98;
+  font-size: clamp(2.25rem, 4.3vw, 3.55rem);
+  line-height: 1.02;
   letter-spacing: -0.05em;
   margin: 0 0 0.7rem;
 }
@@ -519,33 +519,23 @@ html[data-theme="light"] .page-grid {
 
 .hero-portrait {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-.profile-image,
-.profile-fallback {
-  width: min(100%, 360px);
+.profile-image {
+  width: min(100%, 420px);
   aspect-ratio: 4 / 5;
   border-radius: 30px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   overflow: hidden;
-}
-
-.profile-image {
   object-fit: cover;
   object-position: center 18%;
   background: var(--surface-strong);
 }
 
 .profile-fallback {
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
+  display: none !important;
 }
 
 .hero-side {
@@ -684,6 +674,10 @@ html[data-theme="light"] .page-grid {
 
 .tag-list--large .tag {
   padding: 0.6rem 0.8rem;
+}
+
+.interests-card {
+  width: 100%;
 }
 
 /* ========================
