@@ -1,7 +1,3 @@
-/* =========================================================
-   RENDER + INTERACTION LOGIC
-   Reads content from site-data.js and fills the page.
-   ========================================================= */
 
 (function () {
   const data = window.siteData;
@@ -42,9 +38,11 @@
     a.className = `button button--${link.style || defaultStyle}`;
     a.href = link.href || "#";
     a.textContent = link.label || "Link";
-    if (a.href.startsWith("http")) {
-      a.target = "_blank";
-      a.rel = "noreferrer";
+    if (a.href.startsWith("http") || a.href.startsWith("mailto:")) {
+      if (a.href.startsWith("http")) {
+        a.target = "_blank";
+        a.rel = "noreferrer";
+      }
     }
     return a;
   }
@@ -95,12 +93,14 @@
     setText("#hero-eyebrow", personal?.eyebrow);
     setText("#hero-name", name);
     setText("#hero-tagline", personal?.tagline);
-    setText("#hero-summary", personal?.summary);
     setText("#focus-summary", personal?.focusSummary);
-    setText("#availability-text", personal?.availability);
-    setText("#location-text", personal?.location);
 
     if (cvLink) setHref("#header-cv-link", cvLink.href);
+
+    const heroIntro = $("#hero-intro");
+    safeArray(data.about).forEach((paragraph) => {
+      heroIntro.appendChild(create("p", "", paragraph));
+    });
 
     const heroLinks = $("#hero-links");
     safeArray(links).forEach((link, index) => {
@@ -110,12 +110,16 @@
 
     const heroMeta = $("#hero-meta");
     safeArray(personal?.meta).forEach((item) => {
-      const li = create("li", "", item);
-      heroMeta.appendChild(li);
+      heroMeta.appendChild(create("li", "", item));
     });
 
-    const focusTags = $("#focus-tags");
-    focus.innerHTML = "";
+    const heroFacts = $("#hero-facts");
+    safeArray(personal?.heroFacts).forEach((item) => {
+      const row = create("div", "fact-row");
+      row.appendChild(create("span", "fact-row__label", item.label || ""));
+      row.appendChild(create("strong", "fact-row__value", item.value || ""));
+      heroFacts.appendChild(row);
+    });
 
     const imagePath = personal?.profileImage;
     const profileImage = $("#profile-image");
@@ -145,11 +149,6 @@
   }
 
   function renderAbout() {
-    const aboutCopy = $("#about-copy");
-    safeArray(data.about).forEach((paragraph) => {
-      aboutCopy.appendChild(create("p", "", paragraph));
-    });
-
     const interestTags = $("#interest-tags");
     safeArray(data.interests).forEach((interest) => {
       interestTags.appendChild(create("span", "tag", interest));
@@ -160,7 +159,6 @@
       goalList.appendChild(create("li", "", goal));
     });
   }
-
 
   function renderProjectList(projects, grid) {
     safeArray(projects).forEach((project) => {
