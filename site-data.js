@@ -74,7 +74,7 @@ window.siteData = {
       period: "2025 – Present",
       summary:
         "My current research at ETH Zurich focuses on improving reasoning in language models through reinforcement learning. In particular, I study limitations of GRPO-based post-training, including entropy collapse, weak learning signal on hard tasks, and how interventions such as teacher-hint conditioning can improve robustness and learning efficiency.",
-      tags: ["LLM reasoning", "RL post-training", "GRPO", "Sample efficiency", "ETH Zurich"],
+      tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
       featured: true,
       links: []
     },
@@ -84,7 +84,7 @@ window.siteData = {
       period: "2025 – Present",
       summary:
         "Investigating how to recover learning signal when standard RL produces almost no reward on very difficult reasoning tasks. Current work explores teacher hints and minimal solution prefixes to make hard examples learnable instead of simply uninformative.",
-      tags: ["Reinforcement learning", "Sparse reward", "Reasoning", "Sample efficiency"],
+      tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
       featured: true,
       links: []
     },
@@ -94,7 +94,7 @@ window.siteData = {
       period: "2025 – Present",
       summary:
         "Evaluating recursive reasoning, refinement, and compute-allocation strategies at inference time for difficult math benchmarks. The goal is to understand when extra inference compute actually improves reasoning quality and when it merely adds cost.",
-      tags: ["Inference-time compute", "LLMs", "Reasoning", "Evaluation"],
+      tags: ["Inference-Time Compute", "Reasoning", "LLMs", "Model Evaluation", "Test-Time Recursion"],
       featured: true,
       links: []
     },
@@ -104,7 +104,7 @@ window.siteData = {
       period: "2024",
       summary:
         "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
-      tags: ["GNNs", "Graph Transformers", "Finance", "Ablations", "PyTorch"],
+      tags: ["GNNs", "Graph Transformers", "Finance"],
       featured: true,
       links: []
     },
