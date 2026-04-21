@@ -29,7 +29,7 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#top" class="brand" aria-label="Homepage">
+        <a href="#about" class="brand" aria-label="Homepage">
           <span class="brand-mark" id="brand-mark">YN</span>
           <span class="brand-text" id="brand-text">Your Name</span>
         </a>
@@ -75,7 +75,7 @@
     </header>
 
     <main id="main">
-      <section class="hero section" id="top">
+      <section class="hero section" id="about">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow" id="hero-eyebrow">
@@ -83,18 +83,16 @@
             </p>
             <h1 id="hero-name">Your Name</h1>
             <p class="hero-tagline" id="hero-tagline">
-              Master's student in AI with a mathematics background, building toward ML research and research engineering.
+              ML Research Engineer / ML Research Scientist
             </p>
-            <p class="hero-summary" id="hero-summary">
-              I like working across theory, experiments, and engineering — from designing models and evaluations to building reliable ML systems.
-            </p>
+            <div class="hero-intro prose" id="hero-intro"></div>
 
             <div class="hero-links" id="hero-links"></div>
             <ul class="hero-meta" id="hero-meta"></ul>
           </div>
 
-          <aside class="hero-panel card reveal">
-            <div class="profile-shell" id="profile-shell">
+          <aside class="hero-panel reveal">
+            <div class="hero-portrait">
               <img
                 id="profile-image"
                 class="profile-image"
@@ -104,26 +102,16 @@
               <div class="profile-fallback" id="profile-fallback">YN</div>
             </div>
 
-            <div class="spotlight">
-              <h2>Specialization</h2>
-              <p id="focus-summary">
-                Reasoning in Language Models via Reinforcement Learning and Test-Time Recursion.
-              </p>
-            </div>
-            
-            <div class="mini-stats">
-              <div class="mini-stat">
-                <span class="mini-stat__label">Positions sought</span>
-                <strong id="availability-text">ML Research Engineer, ML Research Scientist</strong>
+            <div class="hero-side card">
+              <div class="spotlight">
+                <h2>Specialization</h2>
+                <p id="focus-summary">
+                  Research-heavy engineering in machine learning, including training, evaluation, and reliable deployment.
+                </p>
               </div>
-              
-            <div class="mini-stat">
-              <span class="mini-stat__label">Citizenships</span>
-              <strong id="location-text">Swiss, US</strong>
-            </div>
-          <div>
 
-            <div class="tag-list" id="focus-tags"></div>
+              <div class="hero-facts" id="hero-facts"></div>
+            </div>
           </aside>
         </div>
       </section>
@@ -134,28 +122,24 @@
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section" id="interests">
         <div class="container">
           <div class="section-head reveal">
-            <p class="section-kicker">About</p>
-            <h2>Mathematical thinking + practical ML building</h2>
+            <p class="section-kicker">Research interests</p>
+            <h2>Problems and themes I want to work on</h2>
             <p class="section-lead">
-              A compact overview of background, interests, and the kinds of ML problems I like to work on.
+              The technical directions that currently motivate my work and the kinds of ML problems I would like to tackle.
             </p>
           </div>
 
           <div class="about-grid">
             <div class="card reveal">
-              <div class="prose" id="about-copy"></div>
+              <h3 class="card-title">Current interests</h3>
+              <div class="tag-list tag-list--large" id="interest-tags"></div>
             </div>
 
             <div class="card reveal">
-              <h3 class="card-title">Core interests</h3>
-              <div class="tag-list tag-list--large" id="interest-tags"></div>
-
-              <div class="divider"></div>
-
-              <h3 class="card-title">What I want to work on</h3>
+              <h3 class="card-title">What I am looking for</h3>
               <ul class="clean-list" id="goal-list"></ul>
             </div>
           </div>
