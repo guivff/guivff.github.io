@@ -1,21 +1,37 @@
 window.siteData = {
   seo: {
-    title: "Guiv Farmanfarmaian | ML Research & Engineering",
+    title: "Guiv Farmanfarmaian | ML Research Engineer / Scientist",
     description:
-      "ETH Zurich MSc Computer Science student in Machine Intelligence with a Mathematics background, interested in ML research, reasoning, reinforcement learning, and research engineering."
+      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference."
   },
+
   personal: {
-  name: "Guiv Farmanfarmaian",
-  shortName: "GF",
-  eyebrow: "ETH Zurich · MSc CS (AI) · ML Research & Engineering",
-  tagline:
-    "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
-  summary:
-    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures.",    
-    focusSummary: "Reasoning in Language Models via Reinforcement Learning and Test-Time Recursion.",
-    availability: "ML Research Engineer, ML Research Scientist",
-    location: "Swiss, US",    
-    profileImage: "/assets/guivff_pic.jpg"
+    name: "Guiv Farmanfarmaian",
+    shortName: "GF",
+    eyebrow: "ETH Zurich · Machine Intelligence · Data Analytics Lab",
+    tagline: "ML Research Engineer / ML Research Scientist",
+    focusSummary:
+      "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
+    heroFacts: [
+      {
+        label: "Positions sought",
+        value: "ML Research Engineer · ML Research Scientist"
+      },
+      {
+        label: "Citizenships",
+        value: "Swiss · US"
+      },
+      {
+        label: "Current lab",
+        value: "Data Analytics Lab, ETH Zurich"
+      }
+    ],
+    meta: [
+      "MSc Computer Science · ETH Zurich",
+      "BSc Mathematics · ETH Zurich",
+      "Reasoning · RL · Test-time inference"
+    ],
+    profileImage: "assets/guivff_pic.jpg"
   },
 
   links: [
@@ -28,33 +44,27 @@ window.siteData = {
     { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
     { label: "Background", value: "BSc Mathematics" },
     { label: "Current thesis", value: "Improving LLM Reasoning" },
-    { label: "Target roles", value: "ML Research · Research Engineer · ML Engineer" }
+    { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
   ],
 
   about: [
-    "I am a Master's student in Computer Science at ETH Zurich, specializing in Machine Intelligence, with a prior Bachelor's degree in Mathematics. I am most interested in machine learning problems that combine rigorous ideas with strong empirical work.",
-    "My current work focuses on improving LLM reasoning on challenging problems. More broadly, I am interested in reinforcement learning, reasoning, sample-efficient learning, test-time compute, continual learning, and model evaluation.",
-    "I am looking for roles where I can contribute both as a researcher and as a builder: designing experiments, implementing training pipelines, evaluating models carefully, and turning ideas into working systems."
+    "I recently completed a Master’s in Computer Science at ETH Zurich, specializing in Machine Intelligence, and conduct research in the Data Analytics Lab under the supervision of Prof. Thomas Hofmann and Dr. Amir Joudaki. Before that, I worked in Prof. Roger Wattenhofer’s Distributed Computing Group and earned a Bachelor’s degree in Mathematics from ETH Zurich. My current research focuses on reasoning in language models through reinforcement learning, especially on addressing limitations of GRPO. More broadly, I am interested in sample-efficient learning, test-time compute, and continual learning."
   ],
 
   interests: [
-    "LLM reasoning",
+    "Reasoning in language models",
     "Reinforcement learning",
     "RL post-training",
     "Test-time inference",
     "Sample-efficient learning",
-    "Continual learning",
-    "Graph learning",
-    "PyTorch",
-    "Evaluation and ablations",
-    "ML systems"
+    "Continual learning"
   ],
 
   goals: [
-    "Research engineer roles combining strong experiments with real implementation.",
-    "ML engineer roles with meaningful modeling depth rather than only product integration.",
-    "Applied scientist or early-career research roles in reasoning, RL, LLMs, or learning algorithms.",
-    "Work that connects ideas and systems: training, evaluation, benchmarking, and robust experimentation."
+    "ML Research Engineer roles with strong experimental and implementation depth.",
+    "ML Research Scientist roles in reasoning, reinforcement learning, and language models.",
+    "Work spanning training, evaluation, post-training, and careful empirical analysis.",
+    "Teams that value both research taste and high-quality execution." 
   ],
 
   projects: [
@@ -98,55 +108,54 @@ window.siteData = {
       featured: true,
       links: []
     },
-{
-  title: "Task Sequencing in Continual Learning",
-  period: "2024",
-  summary:
-    "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
-  tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
-  featured: false,
-  links: [
-    { label: "Report", href: "assets/reports/task_ordering_report.pdf" },
-    { label: "Code", href: "#" }
-  ]
-},
     {
-  title: "Text Sentiment Classification with BERTweet and Custom Heads",
-  period: "2024",
-  summary:
-    "Developed and rigorously evaluated a transformer-based approach to sentiment classification on noisy Twitter text. We combined tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom classification heads, and ensemble methods. We studied preprocessing choices such as duplicate-voting, hashtag segmentation, and slang normalization. Additionally, we ran extensive ablations over several classification heads, such as  additive attention, self-attention, and KAN-based classifiers. The final system achieved 90.7% test accuracy.",
-  tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
-  featured: false,
-  links: [
-    { label: "Report", href: "assets/reports/twitter_sentiment_report.pdf" },
-    { label: "Code", href: "#" }
-  ]
-},
-{
-  title: "Gene Expression Prediction from Chromatin Landscape",
-  period: "2024",
-  summary:
-    "Developed a multimodal model for predicting gene expression from regulatory context around each gene. We combined histone modifications, DNase accessibility, and DNA sequence in a staged CNN + Transformer architecture, using convolutional layers to extract local regulatory features and transformer layers to model longer-range interactions across modalities. The main transformer fused these inputs into a learned latent-token representation, and a second transformer used those latent representations together with a dedicated gene-expression (GEX) token for final regression. To better match the zero-inflated target distribution and the Spearman-correlation evaluation setting, we also introduced thresholding and robust prediction aggregation.",
-  tags: ["Genomics", "Transformers", "Epigenetics", "Sequence Modeling"],
-  featured: false,
-  links: [
-    { label: "Approach", href: "assets/slides/genomics-approach-slides.pptx" },
-    { label: "Assignment", href: "assets/reports/genomics_assignment.pdf" },
-    { label: "Code", href: "#" }
-  ]
-},
+      title: "Task Sequencing in Continual Learning",
+      period: "2024",
+      summary:
+        "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
+      tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
+      featured: false,
+      links: [
+        { label: "Report", href: "assets/reports/task-ordering-report.pdf" },
+        { label: "Code", href: "#" }
+      ]
+    },
     {
-  title: "Human Motion Prediction with Attention-Augmented Graph Convolutions",
-  period: "2024",
-  summary:
-    "This repository contains our implementation of an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method uses motion attention to retrieve relevant historical subsequences and combines them with a residual GCN in the DCT domain to forecast future poses. We benchmarked the approach against various transformer, recurrent and graph-based  baselines, and it achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
-  tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
-  featured: false,
-  links: [
-    { label: "Report", href: "assets/reports/motion_prediction_report.pdf" },
-    { label: "Code", href: "#" }
-  ]
-},
+      title: "Text Sentiment Classification with BERTweet and Custom Heads",
+      period: "2024",
+      summary:
+        "Developed and rigorously evaluated a transformer-based approach to sentiment classification on noisy Twitter text. We combined tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom classification heads, and ensemble methods. We studied preprocessing choices such as duplicate-voting, hashtag segmentation, and slang normalization. Additionally, we ran extensive ablations over several classification heads, such as additive attention, self-attention, and KAN-based classifiers. The final system achieved 90.7% test accuracy.",
+      tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
+      featured: false,
+      links: [
+        { label: "Report", href: "assets/reports/twitter-sentiment-report.pdf" },
+        { label: "Code", href: "#" }
+      ]
+    },
+    {
+      title: "Gene Expression Prediction from Chromatin Landscape",
+      period: "2024",
+      summary:
+        "Developed a multimodal model for predicting gene expression from regulatory context around each gene. We combined histone modifications, DNase accessibility, and DNA sequence in a staged CNN + Transformer architecture, using convolutional layers to extract local regulatory features and transformer layers to model longer-range interactions across modalities. The main transformer fused these inputs into a learned latent-token representation, and a second transformer used those latent representations together with a dedicated gene-expression token for final regression. To better match the zero-inflated target distribution and the Spearman-correlation evaluation setting, we also introduced thresholding and robust prediction aggregation.",
+      tags: ["Genomics", "Transformers", "Epigenetics", "Sequence Modeling"],
+      featured: false,
+      links: [
+        { label: "Assignment", href: "assets/reports/genomics-assignment.pdf" },
+        { label: "Code", href: "#" }
+      ]
+    },
+    {
+      title: "Human Motion Prediction with Attention-Augmented Graph Convolutions",
+      period: "2024",
+      summary:
+        "This repository contains our implementation of an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method uses motion attention to retrieve relevant historical subsequences and combines them with a residual GCN in the DCT domain to forecast future poses. We benchmarked the approach against various transformer, recurrent, and graph-based baselines, and it achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
+      tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
+      featured: false,
+      links: [
+        { label: "Report", href: "assets/reports/motion-prediction-report.pdf" },
+        { label: "Code", href: "#" }
+      ]
+    }
   ],
 
   research: {
@@ -245,7 +254,7 @@ window.siteData = {
 
   contact: {
     copy:
-      "I am especially interested in ML research, research engineer, applied scientist, and ML engineer roles. Feel free to reach out about opportunities, collaboration, or interesting problems.",
+      "I am especially interested in ML Research Engineer, ML Research Scientist, Applied Scientist, and ML Engineer roles. Feel free to reach out about opportunities, collaboration, or interesting problems.",
     links: [
       { label: "Email me", href: "mailto:guivff@gmail.com", style: "primary" },
       { label: "GitHub", href: "https://github.com/guivff", style: "ghost" }
@@ -254,6 +263,6 @@ window.siteData = {
 
   footer: {
     text: "© Guiv Farmanfarmaian",
-    note: "Built with plain HTML, CSS, and JavaScript. Add public report and code links in site-data.js as projects become public."
+    note: "Built with plain HTML, CSS, and JavaScript for easy GitHub Pages deployment."
   }
 };
