@@ -1,3 +1,7 @@
+/* =========================================================
+   RENDER + INTERACTION LOGIC
+   Reads content from site-data.js and fills the page.
+   ========================================================= */
 
 (function () {
   const data = window.siteData;
@@ -215,50 +219,7 @@
   }
 
   function renderResearch() {
-    const research = data.research || {};
-    setText("#thesis-title", research.thesisTitle);
-    setText("#thesis-summary", research.thesisSummary);
-
-    const thesisBullets = $("#thesis-bullets");
-    safeArray(research.bullets).forEach((bullet) => {
-      thesisBullets.appendChild(create("li", "", bullet));
-    });
-
-    const publications = safeArray(research.publications);
-    const publicationsList = $("#publications-list");
-    const publicationsCard = $("#publications-card");
-
-    if (!publications.length) {
-      publicationsCard.hidden = true;
-      return;
-    }
-
-    publications.forEach((item) => {
-      const entry = create("div", "stack-item");
-      const top = create("div", "stack-item__top");
-      const titleWrap = item.href ? create("a", "inline-link") : create("div");
-      if (item.href) {
-        titleWrap.href = item.href;
-        if (item.href.startsWith("http")) {
-          titleWrap.target = "_blank";
-          titleWrap.rel = "noreferrer";
-        }
-      }
-
-      const title = create("h4", "stack-item__title", item.title || "Untitled");
-      titleWrap.appendChild(title);
-
-      const meta = create(
-        "span",
-        "stack-item__meta",
-        [item.venue, item.year].filter(Boolean).join(" · ")
-      );
-
-      top.append(titleWrap, meta);
-
-      entry.appendChild(top);
-      publicationsList.appendChild(entry);
-    });
+    return;
   }
 
   function renderExperience() {
@@ -366,7 +327,6 @@
   renderHighlights();
   renderAbout();
   renderProjects();
-  renderResearch();
   renderExperience();
   renderNotes();
   renderContact();

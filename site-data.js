@@ -69,12 +69,12 @@ window.siteData = {
 
   projects: [
     {
-      title: "Mitigating Entropy Collapse in RL",
-      category: "Research project · ongoing thesis work",
+      title: "Master’s Thesis Research — Improving LLM Reasoning on Challenging Problems",
+      category: "ETH Zurich research · Data Analytics Lab",
       period: "2025 – Present",
       summary:
-        "Studying collapse and diversity loss in GRPO-based RL post-training for mathematical reasoning. I am designing and evaluating training interventions such as teacher-hint conditioning to stabilize learning on hard problems while preserving useful exploration.",
-      tags: ["RLVR", "GRPO", "LLMs", "Math reasoning", "Ablations"],
+        "My current research at ETH Zurich focuses on improving reasoning in language models through reinforcement learning. In particular, I study limitations of GRPO-based post-training, including entropy collapse, weak learning signal on hard tasks, and how interventions such as teacher-hint conditioning can improve robustness and learning efficiency.",
+      tags: ["LLM reasoning", "RL post-training", "GRPO", "Sample efficiency", "ETH Zurich"],
       featured: true,
       links: []
     },
