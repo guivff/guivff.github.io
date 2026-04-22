@@ -1,35 +1,35 @@
 window.siteData = {
   seo: {
-    title: "Guiv Farmanfarmaian | ML Research Engineer / Scientist",
+    title: "Guiv Farmanfarmaian | ML Research Engineer",
     description:
-      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference."
+      "ETH Zurich ML research engineer focused on LLM reasoning, RL post-training, test-time inference, graph learning, and careful empirical evaluation."
   },
 
   personal: {
     name: "Guiv Farmanfarmaian",
     shortName: "GF",
-    eyebrow: "ETH Zurich · Machine Intelligence · Data Analytics Lab",
-    tagline: "",
+    eyebrow: "ETH Zurich · ML Research Engineering · Language-Model Reasoning",
+    tagline: "ML research engineer focused on reasoning in language models, RL post-training, and test-time inference.",
     focusSummary:
-      "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
+      "Reasoning in language models via reinforcement learning, post-training, test-time recursion, and rigorous evaluation.",
     heroFacts: [
       {
-        label: "Positions sought",
-        value: "ML Research Engineer · ML Research Scientist"
+        label: "Research focus",
+        value: "LLM reasoning · RL post-training · test-time inference"
       },
       {
-        label: "Citizenships",
-        value: "Swiss · US"
+        label: "Background",
+        value: "ETH MSc Computer Science · ETH BSc Mathematics"
       },
       {
-        label: "Current lab",
-        value: "Data Analytics Lab, ETH Zurich"
+        label: "Roles sought",
+        value: "ML Research Engineer · Applied Scientist · ML Engineer"
       }
     ],
     meta: [
       "MSc Computer Science · ETH Zurich",
       "BSc Mathematics · ETH Zurich",
-      "Reasoning · RL · Test-time inference"
+      "Reasoning · RL · Evaluation"
     ],
     profileImage: "assets/guivff_pic.jpg"
   },
@@ -42,14 +42,14 @@ window.siteData = {
 
   highlights: [
     { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
-    { label: "Background", value: "BSc Mathematics" },
-    { label: "Current thesis", value: "Reasoning in LLMs: RLVR & Test-Time Recursion" },
-    { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
+    { label: "Research", value: "LLM reasoning · RLVR · test-time inference" },
+    { label: "Technical depth", value: "Transformers · GNNs · evaluation pipelines" },
+    { label: "Target roles", value: "ML Research Engineer · Applied Scientist" }
   ],
 
   about: [
-    "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
-    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
+    "I recently completed a Master’s in Computer Science at ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing mandatory Swiss national service.",
+    "My recent work focuses on reasoning in language models, especially reinforcement-learning-based post-training, sparse-reward reasoning problems, and test-time recursion. More broadly, I am interested in building intelligent systems that learn efficiently, adapt continually, and are evaluated with careful empirical methodology."
   ],
 
   interests: [
@@ -57,172 +57,143 @@ window.siteData = {
     "Reinforcement learning",
     "RL post-training",
     "Test-time inference",
-    "Sample-efficient learning",
-    "Continual learning"
-  ],
-
-  goals: [
-    "ML Research Engineer roles with strong experimental and implementation depth.",
-    "ML Research Scientist roles in reasoning, reinforcement learning, and language models.",
-    "Work spanning training, evaluation, post-training, and careful empirical analysis.",
-    "Teams that value both research taste and high-quality execution." 
+    "Graph learning",
+    "Continual learning",
+    "Sample-efficient learning"
   ],
 
   projects: [
     {
-      title: "Master’s Thesis Research — Reasoning in LLMs: RLVR & Test-Time Recursion",
-      category: "ETH Zurich research · Data Analytics Lab",
-      period: "2025 – Present",
+      title: "Reasoning in LLMs with RLVR and Test-Time Recursion",
+      category: "ETH Zurich master’s thesis · Data Analytics Lab",
+      period: "2025–2026",
       summary:
-        "My current research at ETH Zurich focuses on improving reasoning in language models through reinforcement learning. In particular, I study limitations of GRPO-based post-training, including entropy collapse, weak learning signal on hard tasks, and how interventions such as teacher-hint conditioning can improve robustness and learning efficiency.",
-      tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
+        "Studied how RL post-training and test-time inference can improve mathematical reasoning in language models. The work examines GRPO-style RLVR failure modes on hard tasks, including weak learning signal, entropy collapse, and sparse or near-zero rewards, and evaluates interventions such as teacher-hint conditioning, minimal solution prefixes, and recursive refinement.",
+      tags: ["LLM reasoning", "RLVR", "GRPO", "Test-time inference", "Evaluation"],
       featured: true,
       links: []
     },
     {
-      title: "RL for Hard Problems with Near-Zero Reward",
-      category: "Research project · ongoing thesis work",
-      period: "2025 – Present",
-      summary:
-        "Investigating how to recover learning signal when standard RL produces almost no reward on very difficult reasoning tasks. Current work explores teacher hints and minimal solution prefixes to make hard examples learnable instead of simply uninformative.",
-      tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
-      featured: true,
-      links: []
-    },
-    {
-      title: "Test-Time Inference for Mathematical Reasoning",
-      category: "Research project · ongoing thesis work",
-      period: "2025 – Present",
-      summary:
-        "Evaluating recursive reasoning, refinement, and compute-allocation strategies at inference time for difficult math benchmarks. The goal is to understand when extra inference compute actually improves reasoning quality and when it merely adds cost.",
-      tags: ["Inference-Time Compute", "Reasoning", "LLMs", "Model Evaluation", "Test-Time Recursion"],
-      featured: true,
-      links: []
-    },
-    {
-      title: "Supply-Chain Graph Learning (ADIA)",
-      category: "Research project · semester thesis",
+      title: "Confidential Supply-Chain Graph Learning",
+      category: "Semester thesis · confidential industry collaboration",
       period: "2024",
       summary:
-        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
-      tags: ["GNNs", "Graph Transformers", "Finance"],
+        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with an institutional investment partner. The project evaluated whether relational structure could improve financial prediction and portfolio-relevant downstream signals. Dataset details, code, metrics, and results are confidential.",
+      tags: ["GNNs", "Graph Transformers", "Financial ML", "Ablations"],
       featured: true,
       links: []
     },
     {
       title: "Task Sequencing in Continual Learning",
+      category: "Technical report · continual learning",
       period: "2024",
       summary:
-        "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
-      tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
-      featured: false,
+        "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting without changing the learner itself. We combined curvature-based task interference with gradient alignment to construct similarity-aware task groups and optimize learning schedules. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
+      tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Optimization"],
+      featured: true,
       links: [
-        { label: "Report", href: "assets/reports/task-ordering-report.pdf" },
-        { label: "Code", href: "#" }
+        { label: "Report", href: "assets/reports/task-ordering-report.pdf" }
       ]
     },
     {
       title: "Text Sentiment Classification with BERTweet and Custom Heads",
+      category: "Technical report · NLP",
       period: "2024",
       summary:
-        "Developed and rigorously evaluated a transformer-based approach to sentiment classification on noisy Twitter text. We combined tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom classification heads, and ensemble methods. We studied preprocessing choices such as duplicate-voting, hashtag segmentation, and slang normalization. Additionally, we ran extensive ablations over several classification heads, such as additive attention, self-attention, and KAN-based classifiers. The final system achieved 90.7% test accuracy.",
-      tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
+        "Developed a transformer-based sentiment classifier for noisy Twitter text. The system combined tweet-specific preprocessing, BERT-family fine-tuning, custom classification heads, and ensemble methods. We ran ablations over duplicate voting, hashtag segmentation, slang normalization, additive attention, self-attention, and KAN-style heads. The final system achieved 90.7% test accuracy.",
+      tags: ["NLP", "Transformers", "BERTweet", "PyTorch", "Ablations"],
       featured: false,
       links: [
-        { label: "Report", href: "assets/reports/twitter-sentiment-report.pdf" },
-        { label: "Code", href: "#" }
+        { label: "Report", href: "assets/reports/twitter-sentiment-report.pdf" }
       ]
     },
     {
       title: "Gene Expression Prediction from Chromatin Landscape",
+      category: "Technical report · genomics ML",
       period: "2024",
       summary:
-        "Developed a multimodal model for predicting gene expression from regulatory context around each gene. We combined histone modifications, DNase accessibility, and DNA sequence in a staged CNN + Transformer architecture, using convolutional layers to extract local regulatory features and transformer layers to model longer-range interactions across modalities. The main transformer fused these inputs into a learned latent-token representation, and a second transformer used those latent representations together with a dedicated gene-expression token for final regression. To better match the zero-inflated target distribution and the Spearman-correlation evaluation setting, we also introduced thresholding and robust prediction aggregation.",
+        "Built a multimodal model for gene-expression prediction from DNA sequence, histone modifications, and DNase accessibility. The architecture used CNN layers for local regulatory features and transformer layers for longer-range multimodal interactions, then added thresholding and robust aggregation to better match the zero-inflated target distribution and Spearman-correlation evaluation setting.",
       tags: ["Genomics", "Transformers", "Epigenetics", "Sequence Modeling"],
       featured: false,
       links: [
-        { label: "Assignment", href: "assets/reports/genomics-assignment.pdf" },
-        { label: "Code", href: "#" }
+        { label: "Report", href: "assets/reports/genomics-assignment.pdf" }
       ]
     },
     {
       title: "Human Motion Prediction with Attention-Augmented Graph Convolutions",
+      category: "Technical report · sequence modeling",
       period: "2024",
       summary:
-        "This repository contains our implementation of an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method uses motion attention to retrieve relevant historical subsequences and combines them with a residual GCN in the DCT domain to forecast future poses. We benchmarked the approach against various transformer, recurrent, and graph-based baselines, and it achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
+        "Implemented an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method used motion attention to retrieve relevant historical subsequences and combined them with a residual GCN in the DCT domain to forecast future poses. It achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
       tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
       featured: false,
       links: [
-        { label: "Report", href: "assets/reports/motion-prediction-report.pdf" },
-        { label: "Code", href: "#" }
+        { label: "Report", href: "assets/reports/motion-prediction-report.pdf" }
       ]
     }
   ],
 
-  research: {
-    thesisTitle: "Master's Thesis — Reasoning in LLMs: RLVR & Test-Time Recursion",
-    thesisSummary:
-      "My current thesis at ETH Zurich studies how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme is how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.",
-    bullets: [
-      "Studying RL post-training for math reasoning with GRPO-based RLVR.",
-      "Exploring teacher-hint conditioning and minimal-solution-prefix methods to recover learning signal on hard problems.",
-      "Evaluating recursive reasoning and refinement methods for challenging reasoning benchmarks."
-    ],
-    publications: [
-      {
-        title: "Task Sequencing in Continual Learning",
-        venue: "Project report",
-        year: "2024",
-        href: "assets/reports/task-ordering-report.pdf"
-      },
-      {
-        title: "Text Sentiment Classification with BERTweet and Custom Heads",
-        venue: "Project report",
-        year: "2024",
-        href: "assets/reports/twitter-sentiment-report.pdf"
-      },
-      {
-        title: "Human Motion Prediction with Attention-Augmented GCNs",
-        venue: "Project report",
-        year: "2024",
-        href: "assets/reports/motion-prediction-report.pdf"
-      }
-    ]
-  },
+  technicalReports: [
+    {
+      title: "Task Sequencing in Continual Learning",
+      venue: "Technical report",
+      year: "2024",
+      href: "assets/reports/task-ordering-report.pdf"
+    },
+    {
+      title: "Text Sentiment Classification with BERTweet and Custom Heads",
+      venue: "Technical report",
+      year: "2024",
+      href: "assets/reports/twitter-sentiment-report.pdf"
+    },
+    {
+      title: "Gene Expression Prediction from Chromatin Landscape",
+      venue: "Technical report",
+      year: "2024",
+      href: "assets/reports/genomics-assignment.pdf"
+    },
+    {
+      title: "Human Motion Prediction with Attention-Augmented GCNs",
+      venue: "Technical report",
+      year: "2024",
+      href: "assets/reports/motion-prediction-report.pdf"
+    }
+  ],
 
   experience: [
     {
-      role: "Master's Thesis Researcher",
-      org: "ETH Zurich",
-      period: "2025 – Present",
+      role: "Master’s Thesis Researcher",
+      org: "ETH Zurich · Data Analytics Lab",
+      period: "2025–2026",
       summary:
-        "Researching RL post-training and test-time inference methods for mathematical reasoning.",
+        "Completed research on RL post-training and test-time inference methods for mathematical reasoning in language models.",
       bullets: [
-        "Investigating collapse prevention in GRPO-based RL for hard reasoning tasks.",
-        "Recovering RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.",
-        "Evaluating recursive reasoning and refinement methods on difficult math benchmarks."
+        "Investigated GRPO-style RLVR failure modes on hard reasoning tasks, including weak learning signal and entropy collapse.",
+        "Explored teacher-hint conditioning and minimal solution prefixes to recover learning signal on sparse-reward problems.",
+        "Evaluated recursive reasoning and refinement methods for difficult mathematical reasoning benchmarks."
       ]
     },
     {
       role: "Semester Thesis Researcher",
-      org: "ETH Zurich × leading investment firm",
+      org: "ETH Zurich × confidential institutional investment partner",
       period: "2024",
       summary:
-        "Worked on graph learning for portfolio-relevant metrics using large directed supply-chain graphs.",
+        "Worked on graph learning for financial prediction using large directed supply-chain graphs.",
       bullets: [
         "Built and evaluated GNN and Graph Transformer models on a large directed graph.",
-        "Ran ablations and baseline comparisons on financial prediction and downstream portfolio metrics."
+        "Designed baselines, ablations, and evaluation pipelines for portfolio-relevant downstream signals.",
+        "Kept dataset details, code, quantitative metrics, and results confidential."
       ]
     },
     {
-      role: "Teaching Assistant, Computational Intelligence Lab (CIL)",
+      role: "Teaching Assistant, Computational Intelligence Lab",
       org: "ETH Zurich",
       period: "Feb 2025 – Jun 2025",
       summary:
-        "Supported teaching in machine learning coursework at ETH Zurich.",
+        "Supported implementation-heavy machine learning coursework at ETH Zurich.",
       bullets: [
-        "Helped students with technically demanding machine learning material.",
-        "Supported the course through teaching and guidance."
+        "Helped students debug modeling, evaluation, and experimental-design questions.",
+        "Guided students through technically demanding ML project work and course material."
       ]
     },
     {
@@ -232,21 +203,20 @@ window.siteData = {
       summary:
         "Worked on portfolio risk analysis, reporting automation, and data infrastructure.",
       bullets: [
-        "Implemented regression and clustering methods to analyze portfolio risk.",
-        "Automated reporting tools using Python and R.",
-        "Implemented data pipelines using AWS.",
-        "Participated in hackathons to develop Random Forest models for risk detection."
+        "Built Python/R reporting automation for recurring portfolio risk analysis workflows.",
+        "Applied regression and clustering methods to analyze portfolio behavior and risk patterns.",
+        "Implemented AWS-backed data pipelines and contributed to Random Forest prototypes for risk detection."
       ]
     },
     {
-      role: "Intern",
+      role: "Software Intern",
       org: "Reply Sytel",
       period: "Apr 2017 – May 2017",
       summary:
-        "Worked on software prototypes and technical white papers.",
+        "Built software prototypes and wrote technical research material.",
       bullets: [
-        "Wrote front-end and back-end software to showcase new project initiatives.",
-        "Wrote white papers on networking and proof-of-stake blockchain technology."
+        "Developed front-end and back-end prototypes for new project initiatives.",
+        "Wrote technical white papers on networking and proof-of-stake blockchain technology."
       ]
     }
   ],
@@ -255,10 +225,11 @@ window.siteData = {
 
   contact: {
     copy:
-      "I am especially interested in ML Research Engineer, ML Research Scientist, Applied Scientist, and ML Engineer roles. Feel free to reach out about opportunities, collaboration, or interesting problems.",
+      "I am interested in ML Research Engineer, Applied Scientist, ML Engineer, and early research scientist roles, especially where rigorous experimentation and strong implementation matter.",
     links: [
       { label: "Email me", href: "mailto:guivff@gmail.com", style: "primary" },
-      { label: "GitHub", href: "https://github.com/guivff", style: "ghost" }
+      { label: "GitHub", href: "https://github.com/guivff", style: "ghost" },
+      { label: "CV", href: "assets/GuivFF_CV.pdf", style: "ghost" }
     ]
   },
 

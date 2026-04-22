@@ -1,16 +1,20 @@
 /* =========================================================
    RENDER + INTERACTION LOGIC
    Reads content from site-data.js and fills the page.
+   The static HTML contains a complete fallback for crawlers,
+   no-JS users, and cases where the data script fails.
    ========================================================= */
 
 (function () {
   const data = window.siteData;
   if (!data) {
-    console.error("siteData not found. Make sure site-data.js loads before script.js.");
+    console.error("siteData not found. Keeping static fallback content visible.");
     return;
   }
 
   const $ = (selector, parent = document) => parent.querySelector(selector);
+  const $$ = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
+
   const create = (tag, className, text) => {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -20,51 +24,98 @@
 
   const safeArray = (value) => (Array.isArray(value) ? value : []);
 
-  function initialsFromName(name, fallback = "YN") {
+  function isUsableHref(href) {
+    return typeof href === "string" && href.trim() && href.trim() !== "#";
+  }
+
+  function isExternalHref(href) {
+    return /^https?:\/\//i.test(href);
+  }
+
+  function initialsFromName(name, fallback = "GF") {
     if (!name || typeof name !== "string") return fallback;
     const parts = name.trim().split(/\s+/).filter(Boolean);
     if (!parts.length) return fallback;
     return parts.slice(0, 2).map((part) => part[0].toUpperCase()).join("");
   }
 
+  function clearChildren(selectorOrElement) {
+    const el = typeof selectorOrElement === "string" ? $(selectorOrElement) : selectorOrElement;
+    if (el) el.replaceChildren();
+  }
+
+  function clearDynamicFallbacks() {
+    [
+      "#hero-intro",
+      "#hero-links",
+      "#hero-meta",
+      "#hero-facts",
+      "#highlights-grid",
+      "#interest-tags",
+      "#featured-projects-grid",
+      "#other-projects-grid",
+      "#experience-timeline",
+      "#contact-links",
+      "#notes-grid"
+    ].forEach(clearChildren);
+  }
+
   function setText(selector, value) {
     const el = $(selector);
-    if (el && value) el.textContent = value;
+    if (el && typeof value === "string") el.textContent = value;
   }
 
   function setHref(selector, value) {
     const el = $(selector);
-    if (el && value) el.href = value;
+    if (el && isUsableHref(value)) el.setAttribute("href", value);
+  }
+
+  function applyLinkSafety(a, href) {
+    if (isExternalHref(href)) {
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    }
   }
 
   function buildButton(link, defaultStyle = "ghost") {
+    if (!isUsableHref(link?.href)) return null;
+
     const a = create("a");
     a.className = `button button--${link.style || defaultStyle}`;
-    a.href = link.href || "#";
+    a.href = link.href;
     a.textContent = link.label || "Link";
-    if (a.href.startsWith("http") || a.href.startsWith("mailto:")) {
-      if (a.href.startsWith("http")) {
-        a.target = "_blank";
-        a.rel = "noreferrer";
-      }
-    }
+    applyLinkSafety(a, link.href);
     return a;
   }
 
   function buildInlineLink(link) {
+    if (!isUsableHref(link?.href)) return null;
+
     const a = create("a", "inline-link", link.label || "Link");
-    a.href = link.href || "#";
-    if (a.href.startsWith("http")) {
-      a.target = "_blank";
-      a.rel = "noreferrer";
-    }
+    a.href = link.href;
+    applyLinkSafety(a, link.href);
     return a;
   }
 
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem("site-theme");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeTheme(theme) {
+    try {
+      localStorage.setItem("site-theme", theme);
+    } catch (error) {
+      // Ignore storage errors, for example in strict privacy contexts.
+    }
+  }
+
   function renderTheme() {
-    const preferred = localStorage.getItem("site-theme");
-    const initialTheme = preferred || "light";
-    document.documentElement.dataset.theme = initialTheme;
+    const preferred = getStoredTheme();
+    document.documentElement.dataset.theme = preferred || "light";
 
     const toggle = $("#theme-toggle");
     if (!toggle) return;
@@ -73,7 +124,7 @@
       const current = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
       const next = current === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = next;
-      localStorage.setItem("site-theme", next);
+      storeTheme(next);
     });
   }
 
@@ -87,15 +138,16 @@
       metaDescription.setAttribute("content", seo.description);
     }
 
-    const name = personal?.name || "Your Name";
+    const name = personal?.name || "Guiv Farmanfarmaian";
     const shortName = personal?.shortName || initialsFromName(name);
     const cvLink = safeArray(links).find((link) => link.label?.toLowerCase() === "cv");
 
-    $("#brand-mark").textContent = shortName;
-    $("#brand-text").textContent = name;
-
+    setText("#brand-mark", shortName);
+    setText("#brand-text", name);
     setText("#hero-eyebrow", personal?.eyebrow);
     setText("#hero-name", name);
+    setText("#focus-summary", personal?.focusSummary);
+
     const heroTagline = $("#hero-tagline");
     if (heroTagline) {
       if (personal?.tagline) {
@@ -105,24 +157,24 @@
         heroTagline.hidden = true;
       }
     }
-    setText("#focus-summary", personal?.focusSummary);
 
     if (cvLink) setHref("#header-cv-link", cvLink.href);
 
     const heroIntro = $("#hero-intro");
     safeArray(data.about).forEach((paragraph) => {
-      heroIntro.appendChild(create("p", "", paragraph));
+      heroIntro?.appendChild(create("p", "", paragraph));
     });
 
     const heroLinks = $("#hero-links");
     safeArray(links).forEach((link, index) => {
       const style = link.style || (index === 0 ? "primary" : "ghost");
-      heroLinks.appendChild(buildButton({ ...link, style }, style));
+      const button = buildButton({ ...link, style }, style);
+      if (button) heroLinks?.appendChild(button);
     });
 
     const heroMeta = $("#hero-meta");
     safeArray(personal?.meta).forEach((item) => {
-      heroMeta.appendChild(create("li", "", item));
+      heroMeta?.appendChild(create("li", "", item));
     });
 
     const heroFacts = $("#hero-facts");
@@ -130,27 +182,24 @@
       const row = create("div", "fact-row");
       row.appendChild(create("span", "fact-row__label", item.label || ""));
       row.appendChild(create("strong", "fact-row__value", item.value || ""));
-      heroFacts.appendChild(row);
+      heroFacts?.appendChild(row);
     });
 
-    const imagePath = personal?.profileImage;
     const profileImage = $("#profile-image");
-    const profileFallback = $("#profile-fallback");
-
-    if (profileFallback) profileFallback.textContent = shortName;
-    if (imagePath && profileImage) {
-      profileImage.src = imagePath;
+    if (profileImage && personal?.profileImage) {
+      profileImage.src = personal.profileImage;
+      profileImage.alt = `Portrait of ${name}`;
       profileImage.hidden = false;
-      if (profileFallback) profileFallback.hidden = true;
     }
 
-    $("#footer-text").textContent = data.footer?.text || `© ${name}`;
-    const footerNote = $(".footer-note");
-    if (footerNote && data.footer?.note) footerNote.textContent = data.footer.note;
+    setText("#footer-text", data.footer?.text || `© ${name}`);
+    setText(".footer-note", data.footer?.note);
   }
 
   function renderHighlights() {
     const wrap = $("#highlights-grid");
+    if (!wrap) return;
+
     safeArray(data.highlights).forEach((item) => {
       const card = create("div", "info-card reveal");
       const label = create("span", "info-card__label", item.label || "");
@@ -167,16 +216,11 @@
         interestTags.appendChild(create("span", "tag", interest));
       });
     }
-
-    const goalList = $("#goal-list");
-    if (goalList) {
-      safeArray(data.goals).forEach((goal) => {
-        goalList.appendChild(create("li", "", goal));
-      });
-    }
   }
 
   function renderProjectList(projects, grid) {
+    if (!grid) return;
+
     safeArray(projects).forEach((project) => {
       const card = create(
         "article",
@@ -197,15 +241,16 @@
       const footer = create("div", "project-card__footer");
       const tags = create("div", "tag-list");
       safeArray(project.tags).forEach((tag) => tags.appendChild(create("span", "tag", tag)));
-      footer.appendChild(tags);
+      if (tags.children.length) footer.appendChild(tags);
 
-      const links = safeArray(project.links);
-      if (links.length) {
+      const usableLinks = safeArray(project.links).filter((link) => isUsableHref(link?.href));
+      if (usableLinks.length) {
         const linkRow = create("div", "link-row");
-        links.forEach((link) => {
-          linkRow.appendChild(buildInlineLink(link));
+        usableLinks.forEach((link) => {
+          const inlineLink = buildInlineLink(link);
+          if (inlineLink) linkRow.appendChild(inlineLink);
         });
-        footer.appendChild(linkRow);
+        if (linkRow.children.length) footer.appendChild(linkRow);
       }
 
       card.append(top, summary, footer);
@@ -230,12 +275,10 @@
     renderProjectList(others, otherGrid);
   }
 
-  function renderResearch() {
-    return;
-  }
-
   function renderExperience() {
     const timeline = $("#experience-timeline");
+    if (!timeline) return;
+
     safeArray(data.experience).forEach((item) => {
       const wrapper = create("div", "timeline-item reveal");
       const card = create("article", "timeline-card");
@@ -262,6 +305,8 @@
     const section = $("#notes");
     const grid = $("#notes-grid");
 
+    if (!section || !grid) return;
+
     if (!notes.length) {
       section.hidden = true;
       return;
@@ -273,9 +318,8 @@
       const summary = create("p", "muted", item.summary || "");
       card.append(title, summary);
 
-      if (item.href) {
-        card.appendChild(buildInlineLink({ label: "Read more", href: item.href }));
-      }
+      const link = buildInlineLink({ label: "Read more", href: item.href });
+      if (link) card.appendChild(link);
 
       grid.appendChild(card);
     });
@@ -288,14 +332,15 @@
     const linksWrap = $("#contact-links");
     safeArray(contact.links).forEach((link, index) => {
       const style = link.style || (index === 0 ? "primary" : "ghost");
-      linksWrap.appendChild(buildButton({ ...link, style }, style));
+      const button = buildButton({ ...link, style }, style);
+      if (button) linksWrap?.appendChild(button);
     });
   }
 
   function handleMobileNav() {
     const toggle = $("#menu-toggle");
     const wrap = $("#nav-wrap");
-    const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+    const navLinks = $$(".site-nav a");
 
     if (!toggle || !wrap) return;
 
@@ -314,6 +359,8 @@
   }
 
   function initReveal() {
+    document.documentElement.classList.remove("no-js");
+
     const elements = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window)) {
       elements.forEach((el) => el.classList.add("is-visible"));
@@ -334,6 +381,7 @@
     elements.forEach((el) => observer.observe(el));
   }
 
+  clearDynamicFallbacks();
   renderTheme();
   renderHeaderAndHero();
   renderHighlights();

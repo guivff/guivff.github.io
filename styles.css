@@ -186,6 +186,11 @@ html[data-theme="light"] .page-grid {
   transform: translateY(0);
 }
 
+html.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 /* ========================
    Header / navigation
    ======================== */
