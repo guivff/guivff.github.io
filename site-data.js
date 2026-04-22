@@ -267,3 +267,68 @@ window.siteData = {
     note: "Built with plain HTML, CSS, and JavaScript for easy GitHub Pages deployment."
   }
 };
+
+
+/*
+  OPTIONAL COPY-PASTE TEMPLATES
+  -----------------------------
+  Keep the current visible site unchanged, but use these templates when you want
+  to add more featured research, project cards, notes, or report links later.
+
+  1) FEATURED RESEARCH CARD
+  Add this inside the `projects` array and keep `featured: true`.
+
+  {
+    title: "New Research Title",
+    category: "Research project · lab / collaboration",
+    period: "2026",
+    summary:
+      "Two to four sentences explaining the problem, what you did, and what mattered.",
+    tags: ["Tag 1", "Tag 2", "Tag 3"],
+    featured: true,
+    links: [
+      { label: "Code", href: "https://github.com/your-repo" },
+      { label: "Report", href: "assets/reports/your-report.pdf" }
+    ]
+  }
+
+  2) STANDARD PROJECT CARD
+  Add this inside the `projects` array and keep `featured: false`.
+
+  {
+    title: "New Project Title",
+    period: "2026",
+    summary:
+      "A concise description of the task, method, and result.",
+    tags: ["Tag 1", "Tag 2", "Tag 3"],
+    featured: false,
+    links: [
+      { label: "Report", href: "assets/reports/your-report.pdf" },
+      { label: "Code", href: "https://github.com/your-repo" }
+    ]
+  }
+
+  3) NOTE CARD
+  Add this inside the `notes` array.
+
+  {
+    title: "Short note title",
+    summary: "One or two sentences describing the note.",
+    href: "notes/your-note.html"
+  }
+
+  4) TECHNICAL REPORT / WRITE-UP LINK
+  Add this inside `research.publications` if you want another report-style link.
+
+  {
+    title: "Report title",
+    venue: "Project report",
+    year: "2026",
+    href: "assets/reports/your-report.pdf"
+  }
+
+  Tip:
+  - `featured: true` => Research section card
+  - `featured: false` => Projects section card
+  - You can keep Code links as `#` temporarily, but real URLs are better.
+*/
