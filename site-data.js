@@ -49,7 +49,7 @@ window.siteData = {
 
   about: [
     "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
-    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
+    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and stabilizing GRPO-based RLVR. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
   ],
 
   interests: [
@@ -198,20 +198,20 @@ window.siteData = {
       summary:
         "Researching RL post-training and test-time inference methods for mathematical reasoning.",
       bullets: [
-        "Investigating collapse prevention in GRPO-based RL for hard reasoning tasks.",
+        "Developed a method to mitigate mode collapse in GRPO-based RLVR, hence preserving entropy and improving sampling diversity.",
         "Recovering RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.",
-        "Evaluating recursive reasoning and refinement methods on difficult math benchmarks."
+        "Evaluated recursive test-time reasoning and self-refinement approaches for improving mathematical reasoning in LLMs, where candidate reasoning chains are iteratively refined and combined to solve difficult benchmarks."
       ]
     },
     {
       role: "Semester Thesis Researcher",
-      org: "ETH Zurich × leading investment firm",
+      org: "ETH Zurich × ADIA",
       period: "2024",
       summary:
-        "Worked on graph learning for portfolio-relevant metrics using large directed supply-chain graphs.",
+        "Worked on graph learning for financial prediction using large directed supply-chain graphs.",
       bullets: [
         "Built and evaluated GNN and Graph Transformer models on a large directed graph.",
-        "Ran ablations and baseline comparisons on financial prediction and downstream portfolio metrics."
+        "Designed baselines, ablations, and evaluation pipelines for portfolio-relevant downstream signals."
       ]
     },
     {
@@ -221,8 +221,9 @@ window.siteData = {
       summary:
         "Supported teaching in machine learning coursework at ETH Zurich.",
       bullets: [
-        "Helped students with technically demanding machine learning material.",
-        "Supported the course through teaching and guidance."
+        "Led tutorials for ~200 students on linear algebra and optimization for ML.",
+        "Taught PyTorch fundamentals.",
+        "Introduced Course Projects and Graded Final Submissions."
       ]
     },
     {
