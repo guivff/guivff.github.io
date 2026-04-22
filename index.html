@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Name | ML Research & Engineering</title>
+    <title>Guiv Farmanfarmaian | ML Research Engineer</title>
     <meta
       name="description"
-      content="Personal website for an ETH Zurich AI master's student interested in ML research and ML engineering."
+      content="ETH Zurich ML research engineer focused on LLM reasoning, RL post-training, test-time inference, graph learning, and careful empirical evaluation."
     />
+    <meta name="author" content="Guiv Farmanfarmaian" />
     <meta name="theme-color" content="#f4f7fb" />
+    <meta property="og:title" content="Guiv Farmanfarmaian | ML Research Engineer" />
+    <meta
+      property="og:description"
+      content="ETH Zurich ML research engineer focused on LLM reasoning, RL post-training, test-time inference, graph learning, and careful empirical evaluation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/guivff_pic.jpg" />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,8 +39,8 @@
     <header class="site-header">
       <div class="container header-inner">
         <a href="#about" class="brand" aria-label="Homepage">
-          <span class="brand-mark" id="brand-mark">YN</span>
-          <span class="brand-text" id="brand-text">Your Name</span>
+          <span class="brand-mark" id="brand-mark">GF</span>
+          <span class="brand-text" id="brand-text">Guiv Farmanfarmaian</span>
         </a>
 
         <button
@@ -50,9 +59,8 @@
           <nav class="site-nav" id="site-nav" aria-label="Primary">
             <a href="#about">About</a>
             <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
+            <a href="#projects">Technical work</a>
             <a href="#experience">Experience</a>
-            <a href="#notes">Notes</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -66,7 +74,7 @@
             >
               <span aria-hidden="true">◐</span>
             </button>
-            <a class="button button--ghost header-cv-link" id="header-cv-link" href="#"
+            <a class="button button--ghost header-cv-link" id="header-cv-link" href="assets/GuivFF_CV.pdf"
               >CV</a
             >
           </div>
@@ -79,13 +87,31 @@
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow" id="hero-eyebrow">
-              ETH Zurich · AI · ML Research & Engineering
+              ETH Zurich · ML Research Engineering · Language-Model Reasoning
             </p>
-            <h1 id="hero-name">Your Name</h1>
-            <div class="hero-intro prose" id="hero-intro"></div>
+            <h1 id="hero-name">Guiv Farmanfarmaian</h1>
+            <p class="hero-tagline" id="hero-tagline">
+              ML research engineer focused on reasoning in language models, RL post-training, and test-time inference.
+            </p>
+            <div class="hero-intro prose" id="hero-intro">
+              <p>
+                I recently completed a Master’s in Computer Science at ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing mandatory Swiss national service.
+              </p>
+              <p>
+                My recent work focuses on reasoning in language models, especially reinforcement-learning-based post-training, sparse-reward reasoning problems, and test-time recursion. More broadly, I am interested in building intelligent systems that learn efficiently, adapt continually, and are evaluated with careful empirical methodology.
+              </p>
+            </div>
 
-            <div class="hero-links" id="hero-links"></div>
-            <ul class="hero-meta" id="hero-meta"></ul>
+            <div class="hero-links" id="hero-links">
+              <a class="button button--primary" href="assets/GuivFF_CV.pdf">CV</a>
+              <a class="button button--ghost" href="https://github.com/guivff" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="button button--ghost" href="mailto:guivff@gmail.com">Email</a>
+            </div>
+            <ul class="hero-meta" id="hero-meta">
+              <li>MSc Computer Science · ETH Zurich</li>
+              <li>BSc Mathematics · ETH Zurich</li>
+              <li>Reasoning · RL · Evaluation</li>
+            </ul>
           </div>
 
           <aside class="hero-panel reveal">
@@ -93,8 +119,8 @@
               <img
                 id="profile-image"
                 class="profile-image"
-                alt="Profile photo"
-                hidden
+                src="assets/guivff_pic.jpg"
+                alt="Portrait of Guiv Farmanfarmaian"
               />
             </div>
 
@@ -102,11 +128,24 @@
               <div class="spotlight">
                 <h2>Specialization</h2>
                 <p id="focus-summary">
-                  Research-heavy engineering in machine learning, including training, evaluation, and reliable deployment.
+                  Reasoning in language models via reinforcement learning, post-training, test-time recursion, and rigorous evaluation.
                 </p>
               </div>
 
-              <div class="hero-facts" id="hero-facts"></div>
+              <div class="hero-facts" id="hero-facts">
+                <div class="fact-row">
+                  <span class="fact-row__label">Research focus</span>
+                  <strong class="fact-row__value">LLM reasoning · RL post-training · test-time inference</strong>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-row__label">Background</span>
+                  <strong class="fact-row__value">ETH MSc Computer Science · ETH BSc Mathematics</strong>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-row__label">Roles sought</span>
+                  <strong class="fact-row__value">ML Research Engineer · Applied Scientist · ML Engineer</strong>
+                </div>
+              </div>
             </div>
           </aside>
         </div>
@@ -114,7 +153,24 @@
 
       <section class="section section--compact">
         <div class="container">
-          <div class="info-grid" id="highlights-grid"></div>
+          <div class="info-grid" id="highlights-grid">
+            <div class="info-card reveal">
+              <span class="info-card__label">Education</span>
+              <div class="info-card__value">ETH Zurich · MSc CS (AI)</div>
+            </div>
+            <div class="info-card reveal">
+              <span class="info-card__label">Research</span>
+              <div class="info-card__value">LLM reasoning · RLVR · test-time inference</div>
+            </div>
+            <div class="info-card reveal">
+              <span class="info-card__label">Technical depth</span>
+              <div class="info-card__value">Transformers · GNNs · evaluation pipelines</div>
+            </div>
+            <div class="info-card reveal">
+              <span class="info-card__label">Target roles</span>
+              <div class="info-card__value">ML Research Engineer · Applied Scientist</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -122,7 +178,15 @@
         <div class="container">
           <div class="card reveal interests-card">
             <h3 class="card-title">Current interests</h3>
-            <div class="tag-list tag-list--large" id="interest-tags"></div>
+            <div class="tag-list tag-list--large" id="interest-tags">
+              <span class="tag">Reasoning in language models</span>
+              <span class="tag">Reinforcement learning</span>
+              <span class="tag">RL post-training</span>
+              <span class="tag">Test-time inference</span>
+              <span class="tag">Graph learning</span>
+              <span class="tag">Continual learning</span>
+              <span class="tag">Sample-efficient learning</span>
+            </div>
           </div>
         </div>
       </section>
@@ -131,16 +195,81 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="section-kicker">Research</p>
+            <h2>Selected research</h2>
+            <p class="section-lead">
+              Focused research work across language-model reasoning, RL post-training, confidential graph learning, and continual learning.
+            </p>
           </div>
 
           <div class="projects-group reveal" id="featured-projects-block">
             <div class="projects-subhead">
-              <h3>Research projects</h3>
+              <h3>Research and thesis work</h3>
               <p class="muted">
-                Research across language-model reasoning, RL for hard reasoning, stable RLVR training, test-time inference, and adjacent questions in efficient and continual learning.
+                Public summaries of research projects. Confidential collaborations are described only at a non-sensitive technical level.
               </p>
             </div>
-            <div class="card-grid card-grid--featured" id="featured-projects-grid"></div>
+            <div class="card-grid card-grid--featured" id="featured-projects-grid">
+              <article class="card project-card project-card--featured reveal">
+                <p class="project-card__eyebrow">ETH Zurich master’s thesis · Data Analytics Lab</p>
+                <div class="project-card__top">
+                  <h3>Reasoning in LLMs with RLVR and Test-Time Recursion</h3>
+                  <span class="project-card__period">2025–2026</span>
+                </div>
+                <p class="project-card__summary">
+                  Studied how RL post-training and test-time inference can improve mathematical reasoning in language models. The work examines GRPO-style RLVR failure modes on hard tasks, including weak learning signal, entropy collapse, and sparse or near-zero rewards, and evaluates interventions such as teacher-hint conditioning, minimal solution prefixes, and recursive refinement.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">LLM reasoning</span>
+                    <span class="tag">RLVR</span>
+                    <span class="tag">GRPO</span>
+                    <span class="tag">Test-time inference</span>
+                    <span class="tag">Evaluation</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card project-card project-card--featured reveal">
+                <p class="project-card__eyebrow">Semester thesis · confidential industry collaboration</p>
+                <div class="project-card__top">
+                  <h3>Confidential Supply-Chain Graph Learning</h3>
+                  <span class="project-card__period">2024</span>
+                </div>
+                <p class="project-card__summary">
+                  Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with an institutional investment partner. The project evaluated whether relational structure could improve financial prediction and portfolio-relevant downstream signals. Dataset details, code, metrics, and results are confidential.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">GNNs</span>
+                    <span class="tag">Graph Transformers</span>
+                    <span class="tag">Financial ML</span>
+                    <span class="tag">Ablations</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card project-card project-card--featured reveal">
+                <p class="project-card__eyebrow">Technical report · continual learning</p>
+                <div class="project-card__top">
+                  <h3>Task Sequencing in Continual Learning</h3>
+                  <span class="project-card__period">2024</span>
+                </div>
+                <p class="project-card__summary">
+                  Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting without changing the learner itself. We combined curvature-based task interference with gradient alignment to construct similarity-aware task groups and optimize learning schedules. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">Continual Learning</span>
+                    <span class="tag">Catastrophic Forgetting</span>
+                    <span class="tag">Task Similarity</span>
+                    <span class="tag">Optimization</span>
+                  </div>
+                  <div class="link-row">
+                    <a class="inline-link" href="assets/reports/task-ordering-report.pdf">Report</a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -148,15 +277,81 @@
       <section class="section" id="projects">
         <div class="container">
           <div class="section-head reveal">
-            <p class="section-kicker">Projects</p>
-            <h2>Academic and personal projects</h2>
+            <p class="section-kicker">Technical work</p>
+            <h2>Selected technical reports</h2>
             <p class="section-lead">
-              A broader selection of academic and personal work across NLP, LLMs, genomics, graph learning, and sequence modeling.
+              Implementation-heavy academic projects across NLP, genomics, sequence modeling, graph learning, and model evaluation.
             </p>
           </div>
 
           <div class="projects-group reveal" id="other-projects-block">
-            <div class="card-grid card-grid--projects" id="other-projects-grid"></div>
+            <div class="card-grid card-grid--projects" id="other-projects-grid">
+              <article class="card project-card reveal">
+                <p class="project-card__eyebrow">Technical report · NLP</p>
+                <div class="project-card__top">
+                  <h3>Text Sentiment Classification with BERTweet and Custom Heads</h3>
+                  <span class="project-card__period">2024</span>
+                </div>
+                <p class="project-card__summary">
+                  Developed a transformer-based sentiment classifier for noisy Twitter text. The system combined tweet-specific preprocessing, BERT-family fine-tuning, custom classification heads, and ensemble methods. The final system achieved 90.7% test accuracy.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">NLP</span>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">BERTweet</span>
+                    <span class="tag">PyTorch</span>
+                  </div>
+                  <div class="link-row">
+                    <a class="inline-link" href="assets/reports/twitter-sentiment-report.pdf">Report</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card project-card reveal">
+                <p class="project-card__eyebrow">Technical report · genomics ML</p>
+                <div class="project-card__top">
+                  <h3>Gene Expression Prediction from Chromatin Landscape</h3>
+                  <span class="project-card__period">2024</span>
+                </div>
+                <p class="project-card__summary">
+                  Built a multimodal model for gene-expression prediction from DNA sequence, histone modifications, and DNase accessibility. The architecture used CNN layers for local regulatory features and transformer layers for longer-range multimodal interactions.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">Genomics</span>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">Epigenetics</span>
+                    <span class="tag">Sequence Modeling</span>
+                  </div>
+                  <div class="link-row">
+                    <a class="inline-link" href="assets/reports/genomics-assignment.pdf">Report</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card project-card reveal">
+                <p class="project-card__eyebrow">Technical report · sequence modeling</p>
+                <div class="project-card__top">
+                  <h3>Human Motion Prediction with Attention-Augmented Graph Convolutions</h3>
+                  <span class="project-card__period">2024</span>
+                </div>
+                <p class="project-card__summary">
+                  Implemented an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method used motion attention, residual GCNs, and DCT-domain forecasting, achieving the best performance in our study with 1.69 joint-angle discrepancy.
+                </p>
+                <div class="project-card__footer">
+                  <div class="tag-list">
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Motion Prediction</span>
+                    <span class="tag">GCN</span>
+                    <span class="tag">AMASS</span>
+                  </div>
+                  <div class="link-row">
+                    <a class="inline-link" href="assets/reports/motion-prediction-report.pdf">Report</a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -167,25 +362,89 @@
             <p class="section-kicker">Experience</p>
             <h2>Experience</h2>
             <p class="section-lead">
-              A selection of research and industry experience, including roles, projects, and technical work across machine learning and related areas.
+              Research, teaching, and industry experience across machine learning, data science, and software prototyping.
             </p>
           </div>
 
-          <div class="timeline" id="experience-timeline"></div>
-        </div>
-      </section>
+          <div class="timeline" id="experience-timeline">
+            <div class="timeline-item reveal">
+              <article class="timeline-card">
+                <div class="timeline-item__top">
+                  <h3 class="timeline-item__role">Master’s Thesis Researcher</h3>
+                  <span class="timeline-item__period">2025–2026</span>
+                </div>
+                <div class="timeline-item__org">ETH Zurich · Data Analytics Lab</div>
+                <p class="muted">Completed research on RL post-training and test-time inference methods for mathematical reasoning in language models.</p>
+                <ul class="clean-list">
+                  <li>Investigated GRPO-style RLVR failure modes on hard reasoning tasks, including weak learning signal and entropy collapse.</li>
+                  <li>Explored teacher-hint conditioning and minimal solution prefixes to recover learning signal on sparse-reward problems.</li>
+                  <li>Evaluated recursive reasoning and refinement methods for difficult mathematical reasoning benchmarks.</li>
+                </ul>
+              </article>
+            </div>
 
-      <section class="section" id="notes">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="section-kicker">Notes</p>
-            <h2>Optional writing section</h2>
-            <p class="section-lead">
-              Optional technical notes and short write-ups.
-            </p>
+            <div class="timeline-item reveal">
+              <article class="timeline-card">
+                <div class="timeline-item__top">
+                  <h3 class="timeline-item__role">Semester Thesis Researcher</h3>
+                  <span class="timeline-item__period">2024</span>
+                </div>
+                <div class="timeline-item__org">ETH Zurich × confidential institutional investment partner</div>
+                <p class="muted">Worked on graph learning for financial prediction using large directed supply-chain graphs.</p>
+                <ul class="clean-list">
+                  <li>Built and evaluated GNN and Graph Transformer models on a large directed graph.</li>
+                  <li>Designed baselines, ablations, and evaluation pipelines for portfolio-relevant downstream signals.</li>
+                  <li>Kept dataset details, code, quantitative metrics, and results confidential.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline-item reveal">
+              <article class="timeline-card">
+                <div class="timeline-item__top">
+                  <h3 class="timeline-item__role">Teaching Assistant, Computational Intelligence Lab</h3>
+                  <span class="timeline-item__period">Feb 2025 – Jun 2025</span>
+                </div>
+                <div class="timeline-item__org">ETH Zurich</div>
+                <p class="muted">Supported implementation-heavy machine learning coursework at ETH Zurich.</p>
+                <ul class="clean-list">
+                  <li>Helped students debug modeling, evaluation, and experimental-design questions.</li>
+                  <li>Guided students through technically demanding ML project work and course material.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline-item reveal">
+              <article class="timeline-card">
+                <div class="timeline-item__top">
+                  <h3 class="timeline-item__role">Data Scientist</h3>
+                  <span class="timeline-item__period">Nov 2019 – Aug 2020</span>
+                </div>
+                <div class="timeline-item__org">Funding Circle Ltd</div>
+                <p class="muted">Worked on portfolio risk analysis, reporting automation, and data infrastructure.</p>
+                <ul class="clean-list">
+                  <li>Built Python/R reporting automation for recurring portfolio risk analysis workflows.</li>
+                  <li>Applied regression and clustering methods to analyze portfolio behavior and risk patterns.</li>
+                  <li>Implemented AWS-backed data pipelines and contributed to Random Forest prototypes for risk detection.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline-item reveal">
+              <article class="timeline-card">
+                <div class="timeline-item__top">
+                  <h3 class="timeline-item__role">Software Intern</h3>
+                  <span class="timeline-item__period">Apr 2017 – May 2017</span>
+                </div>
+                <div class="timeline-item__org">Reply Sytel</div>
+                <p class="muted">Built software prototypes and wrote technical research material.</p>
+                <ul class="clean-list">
+                  <li>Developed front-end and back-end prototypes for new project initiatives.</li>
+                  <li>Wrote technical white papers on networking and proof-of-stake blockchain technology.</li>
+                </ul>
+              </article>
+            </div>
           </div>
-
-          <div class="card-grid" id="notes-grid"></div>
         </div>
       </section>
 
@@ -194,13 +453,17 @@
           <div class="contact-card card reveal">
             <div>
               <p class="section-kicker">Contact</p>
-              <h2>Let's talk</h2>
+              <h2>Let’s talk</h2>
               <p class="contact-copy" id="contact-copy">
-                I'm interested in ML research, research engineer, applied scientist, and ML engineer roles.
+                I am interested in ML Research Engineer, Applied Scientist, ML Engineer, and early research scientist roles, especially where rigorous experimentation and strong implementation matter.
               </p>
             </div>
 
-            <div class="hero-links" id="contact-links"></div>
+            <div class="hero-links" id="contact-links">
+              <a class="button button--primary" href="mailto:guivff@gmail.com">Email me</a>
+              <a class="button button--ghost" href="https://github.com/guivff" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="button button--ghost" href="assets/GuivFF_CV.pdf">CV</a>
+            </div>
           </div>
         </div>
       </section>
@@ -208,7 +471,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p id="footer-text">© Your Name</p>
+        <p id="footer-text">© Guiv Farmanfarmaian</p>
         <p class="footer-note">
           Built with plain HTML, CSS, and JavaScript for easy GitHub Pages deployment.
         </p>
