@@ -1,35 +1,35 @@
 window.siteData = {
   seo: {
-    title: "Guiv Farmanfarmaian | ML Research Engineer",
+    title: "Guiv Farmanfarmaian | ML Research Engineer / Scientist",
     description:
-      "ETH Zurich ML research engineer focused on LLM reasoning, RL post-training, test-time inference, graph learning, and careful empirical evaluation."
+      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference."
   },
 
   personal: {
     name: "Guiv Farmanfarmaian",
     shortName: "GF",
-    eyebrow: "ETH Zurich · ML Research Engineering · Language-Model Reasoning",
-    tagline: "ML research engineer focused on reasoning in language models, RL post-training, and test-time inference.",
+    eyebrow: "ETH Zurich · Machine Intelligence · Data Analytics Lab",
+    tagline: "",
     focusSummary:
-      "Reasoning in language models via reinforcement learning, post-training, test-time recursion, and rigorous evaluation.",
+      "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
     heroFacts: [
       {
-        label: "Research focus",
-        value: "LLM reasoning · RL post-training · test-time inference"
+        label: "Positions sought",
+        value: "ML Research Engineer · ML Research Scientist"
       },
       {
-        label: "Background",
-        value: "ETH MSc Computer Science · ETH BSc Mathematics"
+        label: "Citizenships",
+        value: "Swiss · US"
       },
       {
-        label: "Roles sought",
-        value: "ML Research Engineer · Applied Scientist · ML Engineer"
+        label: "Current lab",
+        value: "Data Analytics Lab, ETH Zurich"
       }
     ],
     meta: [
       "MSc Computer Science · ETH Zurich",
       "BSc Mathematics · ETH Zurich",
-      "Reasoning · RL · Evaluation"
+      "Reasoning · RL · Test-time inference"
     ],
     profileImage: "assets/guivff_pic.jpg"
   },
@@ -42,14 +42,14 @@ window.siteData = {
 
   highlights: [
     { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
-    { label: "Research", value: "LLM reasoning · RLVR · test-time inference" },
-    { label: "Technical depth", value: "Transformers · GNNs · evaluation pipelines" },
-    { label: "Target roles", value: "ML Research Engineer · Applied Scientist" }
+    { label: "Background", value: "BSc Mathematics" },
+    { label: "Current thesis", value: "Reasoning in LLMs: RLVR & Test-Time Recursion" },
+    { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
   ],
 
   about: [
-    "I recently completed a Master’s in Computer Science at ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing mandatory Swiss national service.",
-    "My recent work focuses on reasoning in language models, especially reinforcement-learning-based post-training, sparse-reward reasoning problems, and test-time recursion. More broadly, I am interested in building intelligent systems that learn efficiently, adapt continually, and are evaluated with careful empirical methodology."
+    "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
+    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and improving post-training methods such as GRPO. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
   ],
 
   interests: [
@@ -57,9 +57,15 @@ window.siteData = {
     "Reinforcement learning",
     "RL post-training",
     "Test-time inference",
-    "Graph learning",
-    "Continual learning",
-    "Sample-efficient learning"
+    "Sample-efficient learning",
+    "Continual learning"
+  ],
+
+  goals: [
+    "ML Research Engineer roles with strong experimental and implementation depth.",
+    "ML Research Scientist roles in reasoning, reinforcement learning, and language models.",
+    "Work spanning training, evaluation, post-training, and careful empirical analysis.",
+    "Teams that value both research taste and high-quality execution." 
   ],
 
   projects: [
@@ -153,67 +159,70 @@ window.siteData = {
     }
   ],
 
-  technicalReports: [
-    {
-      title: "Task Sequencing in Continual Learning",
-      venue: "Technical report",
-      year: "2024",
-      href: "assets/reports/task-ordering-report.pdf"
-    },
-    {
-      title: "Text Sentiment Classification with BERTweet and Custom Heads",
-      venue: "Technical report",
-      year: "2024",
-      href: "assets/reports/twitter-sentiment-report.pdf"
-    },
-    {
-      title: "Gene Expression Prediction from Chromatin Landscape",
-      venue: "Technical report",
-      year: "2024",
-      href: "assets/reports/genomics-assignment.pdf"
-    },
-    {
-      title: "Human Motion Prediction with Attention-Augmented GCNs",
-      venue: "Technical report",
-      year: "2024",
-      href: "assets/reports/motion-prediction-report.pdf"
-    }
-  ],
+  research: {
+    thesisTitle: "Master's Thesis — Reasoning in LLMs: RLVR & Test-Time Recursion",
+    thesisSummary:
+      "My current thesis at ETH Zurich studies how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme is how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.",
+    bullets: [
+      "Studying RL post-training for math reasoning with GRPO-based RLVR.",
+      "Exploring teacher-hint conditioning and minimal-solution-prefix methods to recover learning signal on hard problems.",
+      "Evaluating recursive reasoning and refinement methods for challenging reasoning benchmarks."
+    ],
+    publications: [
+      {
+        title: "Task Sequencing in Continual Learning",
+        venue: "Project report",
+        year: "2024",
+        href: "assets/reports/task-ordering-report.pdf"
+      },
+      {
+        title: "Text Sentiment Classification with BERTweet and Custom Heads",
+        venue: "Project report",
+        year: "2024",
+        href: "assets/reports/twitter-sentiment-report.pdf"
+      },
+      {
+        title: "Human Motion Prediction with Attention-Augmented GCNs",
+        venue: "Project report",
+        year: "2024",
+        href: "assets/reports/motion-prediction-report.pdf"
+      }
+    ]
+  },
 
   experience: [
     {
-      role: "Master’s Thesis Researcher",
-      org: "ETH Zurich · Data Analytics Lab",
-      period: "2025–2026",
+      role: "Master's Thesis Researcher",
+      org: "ETH Zurich",
+      period: "2025 – Present",
       summary:
-        "Completed research on RL post-training and test-time inference methods for mathematical reasoning in language models.",
+        "Researching RL post-training and test-time inference methods for mathematical reasoning.",
       bullets: [
-        "Investigated GRPO-style RLVR failure modes on hard reasoning tasks, including weak learning signal and entropy collapse.",
-        "Explored teacher-hint conditioning and minimal solution prefixes to recover learning signal on sparse-reward problems.",
-        "Evaluated recursive reasoning and refinement methods for difficult mathematical reasoning benchmarks."
+        "Investigating collapse prevention in GRPO-based RL for hard reasoning tasks.",
+        "Recovering RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.",
+        "Evaluating recursive reasoning and refinement methods on difficult math benchmarks."
       ]
     },
     {
       role: "Semester Thesis Researcher",
-      org: "ETH Zurich × confidential institutional investment partner",
+      org: "ETH Zurich × leading investment firm",
       period: "2024",
       summary:
-        "Worked on graph learning for financial prediction using large directed supply-chain graphs.",
+        "Worked on graph learning for portfolio-relevant metrics using large directed supply-chain graphs.",
       bullets: [
         "Built and evaluated GNN and Graph Transformer models on a large directed graph.",
-        "Designed baselines, ablations, and evaluation pipelines for portfolio-relevant downstream signals.",
-        "Kept dataset details, code, quantitative metrics, and results confidential."
+        "Ran ablations and baseline comparisons on financial prediction and downstream portfolio metrics."
       ]
     },
     {
-      role: "Teaching Assistant, Computational Intelligence Lab",
+      role: "Teaching Assistant, Computational Intelligence Lab (CIL)",
       org: "ETH Zurich",
       period: "Feb 2025 – Jun 2025",
       summary:
-        "Supported implementation-heavy machine learning coursework at ETH Zurich.",
+        "Supported teaching in machine learning coursework at ETH Zurich.",
       bullets: [
-        "Helped students debug modeling, evaluation, and experimental-design questions.",
-        "Guided students through technically demanding ML project work and course material."
+        "Helped students with technically demanding machine learning material.",
+        "Supported the course through teaching and guidance."
       ]
     },
     {
@@ -223,39 +232,33 @@ window.siteData = {
       summary:
         "Worked on portfolio risk analysis, reporting automation, and data infrastructure.",
       bullets: [
-        "Built Python/R reporting automation for recurring portfolio risk analysis workflows.",
-        "Applied regression and clustering methods to analyze portfolio behavior and risk patterns.",
-        "Implemented AWS-backed data pipelines and contributed to Random Forest prototypes for risk detection."
+        "Implemented regression and clustering methods to analyze portfolio risk.",
+        "Automated reporting tools using Python and R.",
+        "Implemented data pipelines using AWS.",
+        "Participated in hackathons to develop Random Forest models for risk detection."
       ]
     },
     {
-      role: "Software Intern",
+      role: "Intern",
       org: "Reply Sytel",
       period: "Apr 2017 – May 2017",
       summary:
-        "Built software prototypes and wrote technical research material.",
+        "Worked on software prototypes and technical white papers.",
       bullets: [
-        "Developed front-end and back-end prototypes for new project initiatives.",
-        "Wrote technical white papers on networking and proof-of-stake blockchain technology."
+        "Wrote front-end and back-end software to showcase new project initiatives.",
+        "Wrote white papers on networking and proof-of-stake blockchain technology."
       ]
     }
   ],
 
-notes: [
-  {
-    title: "Notes coming soon",
-    summary:
-      "I plan to use this section for short technical notes on language-model reasoning, RL post-training, and related experiments."
-  }
-],
+  notes: [],
 
   contact: {
     copy:
-      "I am interested in ML Research Engineer, Applied Scientist, ML Engineer, and early research scientist roles, especially where rigorous experimentation and strong implementation matter.",
+      "I am especially interested in ML Research Engineer, ML Research Scientist, Applied Scientist, and ML Engineer roles. Feel free to reach out about opportunities, collaboration, or interesting problems.",
     links: [
       { label: "Email me", href: "mailto:guivff@gmail.com", style: "primary" },
-      { label: "GitHub", href: "https://github.com/guivff", style: "ghost" },
-      { label: "CV", href: "assets/GuivFF_CV.pdf", style: "ghost" }
+      { label: "GitHub", href: "https://github.com/guivff", style: "ghost" }
     ]
   },
 
