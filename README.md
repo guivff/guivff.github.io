@@ -1,6 +1,6 @@
-# Guiv Farmanfarmaian personal website
+# Personal website
 
-Personal website for Guiv Farmanfarmaian, focused on ML research engineering, LLM reasoning, RL post-training, graph learning, and selected technical reports.
+Personal website
 
 ## Local preview
 
