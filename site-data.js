@@ -64,71 +64,91 @@ window.siteData = {
 
   projects: [
     {
-      title: "Reasoning in LLMs with RLVR and Test-Time Recursion",
-      category: "ETH Zurich master’s thesis · Data Analytics Lab",
-      period: "2025–2026",
+      title: "Master’s Thesis Research — Reasoning in LLMs: RLVR & Test-Time Recursion",
+      category: "ETH Zurich research · Data Analytics Lab",
+      period: "2025 – Present",
       summary:
-        "Studied how RL post-training and test-time inference can improve mathematical reasoning in language models. The work examines GRPO-style RLVR failure modes on hard tasks, including weak learning signal, entropy collapse, and sparse or near-zero rewards, and evaluates interventions such as teacher-hint conditioning, minimal solution prefixes, and recursive refinement.",
-      tags: ["LLM reasoning", "RLVR", "GRPO", "Test-time inference", "Evaluation"],
+        "My current research at ETH Zurich focuses on improving reasoning in language models through reinforcement learning. In particular, I study limitations of GRPO-based post-training, including entropy collapse, weak learning signal on hard tasks, and how interventions such as teacher-hint conditioning can improve robustness and learning efficiency.",
+      tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
       featured: true,
       links: []
     },
     {
-      title: "Confidential Supply-Chain Graph Learning",
-      category: "Semester thesis · confidential industry collaboration",
+      title: "RL for Hard Problems with Near-Zero Reward",
+      category: "Research project · ongoing thesis work",
+      period: "2025 – Present",
+      summary:
+        "Investigating how to recover learning signal when standard RL produces almost no reward on very difficult reasoning tasks. Current work explores teacher hints and minimal solution prefixes to make hard examples learnable instead of simply uninformative.",
+      tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
+      featured: true,
+      links: []
+    },
+    {
+      title: "Test-Time Inference for Mathematical Reasoning",
+      category: "Research project · ongoing thesis work",
+      period: "2025 – Present",
+      summary:
+        "Evaluating recursive reasoning, refinement, and compute-allocation strategies at inference time for difficult math benchmarks. The goal is to understand when extra inference compute actually improves reasoning quality and when it merely adds cost.",
+      tags: ["Inference-Time Compute", "Reasoning", "LLMs", "Model Evaluation", "Test-Time Recursion"],
+      featured: true,
+      links: []
+    },
+    {
+      title: "Supply-Chain Graph Learning (ADIA)",
+      category: "Research project · semester thesis",
       period: "2024",
       summary:
-        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with an institutional investment partner. The project evaluated whether relational structure could improve financial prediction and portfolio-relevant downstream signals. Dataset details, code, metrics, and results are confidential.",
-      tags: ["GNNs", "Graph Transformers", "Financial ML", "Ablations"],
+        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
+      tags: ["GNNs", "Graph Transformers", "Finance"],
       featured: true,
       links: []
     },
     {
       title: "Task Sequencing in Continual Learning",
-      category: "Technical report · continual learning",
       period: "2024",
       summary:
-        "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting without changing the learner itself. We combined curvature-based task interference with gradient alignment to construct similarity-aware task groups and optimize learning schedules. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
-      tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Optimization"],
-      featured: true,
+        "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
+      tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
+      featured: false,
       links: [
-        { label: "Report", href: "assets/reports/task-ordering-report.pdf" }
+        { label: "Report", href: "assets/reports/task-ordering-report.pdf" },
+        { label: "Code", href: "#" }
       ]
     },
     {
       title: "Text Sentiment Classification with BERTweet and Custom Heads",
-      category: "Technical report · NLP",
       period: "2024",
       summary:
-        "Developed a transformer-based sentiment classifier for noisy Twitter text. The system combined tweet-specific preprocessing, BERT-family fine-tuning, custom classification heads, and ensemble methods. We ran ablations over duplicate voting, hashtag segmentation, slang normalization, additive attention, self-attention, and KAN-style heads. The final system achieved 90.7% test accuracy.",
-      tags: ["NLP", "Transformers", "BERTweet", "PyTorch", "Ablations"],
+        "Developed and rigorously evaluated a transformer-based approach to sentiment classification on noisy Twitter text. We combined tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom classification heads, and ensemble methods. We studied preprocessing choices such as duplicate-voting, hashtag segmentation, and slang normalization. Additionally, we ran extensive ablations over several classification heads, such as additive attention, self-attention, and KAN-based classifiers. The final system achieved 90.7% test accuracy.",
+      tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
       featured: false,
       links: [
-        { label: "Report", href: "assets/reports/twitter-sentiment-report.pdf" }
+        { label: "Report", href: "assets/reports/twitter-sentiment-report.pdf" },
+        { label: "Code", href: "#" }
       ]
     },
     {
       title: "Gene Expression Prediction from Chromatin Landscape",
-      category: "Technical report · genomics ML",
       period: "2024",
       summary:
-        "Built a multimodal model for gene-expression prediction from DNA sequence, histone modifications, and DNase accessibility. The architecture used CNN layers for local regulatory features and transformer layers for longer-range multimodal interactions, then added thresholding and robust aggregation to better match the zero-inflated target distribution and Spearman-correlation evaluation setting.",
+        "Developed a multimodal model for predicting gene expression from regulatory context around each gene. We combined histone modifications, DNase accessibility, and DNA sequence in a staged CNN + Transformer architecture, using convolutional layers to extract local regulatory features and transformer layers to model longer-range interactions across modalities. The main transformer fused these inputs into a learned latent-token representation, and a second transformer used those latent representations together with a dedicated gene-expression token for final regression. To better match the zero-inflated target distribution and the Spearman-correlation evaluation setting, we also introduced thresholding and robust prediction aggregation.",
       tags: ["Genomics", "Transformers", "Epigenetics", "Sequence Modeling"],
       featured: false,
       links: [
-        { label: "Report", href: "assets/reports/genomics-assignment.pdf" }
+        { label: "Assignment", href: "assets/reports/genomics-assignment.pdf" },
+        { label: "Code", href: "#" }
       ]
     },
     {
       title: "Human Motion Prediction with Attention-Augmented Graph Convolutions",
-      category: "Technical report · sequence modeling",
       period: "2024",
       summary:
-        "Implemented an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method used motion attention to retrieve relevant historical subsequences and combined them with a residual GCN in the DCT domain to forecast future poses. It achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
+        "This repository contains our implementation of an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method uses motion attention to retrieve relevant historical subsequences and combines them with a residual GCN in the DCT domain to forecast future poses. We benchmarked the approach against various transformer, recurrent, and graph-based baselines, and it achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
       tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
       featured: false,
       links: [
-        { label: "Report", href: "assets/reports/motion-prediction-report.pdf" }
+        { label: "Report", href: "assets/reports/motion-prediction-report.pdf" },
+        { label: "Code", href: "#" }
       ]
     }
   ],
@@ -221,7 +241,13 @@ window.siteData = {
     }
   ],
 
-  notes: [],
+notes: [
+  {
+    title: "Notes coming soon",
+    summary:
+      "I plan to use this section for short technical notes on language-model reasoning, RL post-training, and related experiments."
+  }
+],
 
   contact: {
     copy:
