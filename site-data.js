@@ -94,7 +94,7 @@ window.siteData = {
       category: "Research project · ongoing thesis work",
       period: "2025 – Present",
       summary:
-        "Evaluating recursive reasoning, refinement, and compute-allocation strategies at inference time for difficult math benchmarks. The goal is to understand when extra inference compute actually improves reasoning quality and when it merely adds cost.",
+        "Implemented and evaluated recursive reasoning, self-refinement, and best-of-N inference strategies on hard mathematical reasoning benchmarks. The project analyzes when additional test-time compute improves reasoning performance, when gains plateau, and how such gains could potentially be distilled into the base model.",
       tags: ["Inference-Time Compute", "Reasoning", "LLMs", "Model Evaluation", "Test-Time Recursion"],
       featured: true,
       links: []
