@@ -19,7 +19,7 @@ window.siteData = {
       },
       {
         label: "Citizenships",
-        value: "Swiss · US"
+        value: "Swiss · US · Canadian"
       },
       {
         label: "Current lab",
