@@ -70,11 +70,11 @@ window.siteData = {
 
   projects: [
     {
-      title: "Stable RL Post-Training for LLM Reasoning",
-      category: "ETH Zurich research · Data Analytics Lab",
+      title: " Stable RL Post-Training for LLM Reasoning",
+      category: "ETH Zurich research · Data Analytics Lab · confidential, manuscript in preparation",
       period: "2025 – Present",
       summary:
-        "My current research at ETH Zurich focuses on improving reasoning in language models through reinforcement learning. In particular, I study limitations of GRPO-based post-training, including entropy collapse, weak learning signal on hard tasks, and how interventions such as teacher-hint conditioning can improve robustness and learning efficiency.",
+    "My current research at ETH Zurich develops new methods for stable RL post-training of language models on hard mathematical reasoning problems. I designed a teacher-hint-conditioned GRPO variant that prevents RLVR mode collapse, yielding +54% policy entropy, ~9× lower KL divergence vs. GRPO, and +3 pp on unhinted MATH-500 pass@8. I also developed minimal-prefix solution conditioning to recover RL signal on problems with zero pass@16, improving the unhinted target benchmark by +5 pp. Selected technical details remain confidential while the manuscript is in preparation.",
       tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
       featured: true,
       links: []
