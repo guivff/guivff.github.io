@@ -43,7 +43,7 @@ window.siteData = {
   highlights: [
     { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
     { label: "Background", value: "BSc Mathematics" },
-    { label: "Current thesis", value: "Reasoning in LLMs: RLVR & Test-Time Recursion" },
+    { label: "Current thesis", value: "Stable RL Post-Training for LLM Reasoning" },
     { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
   ],
 
