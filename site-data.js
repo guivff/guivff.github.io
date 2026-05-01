@@ -84,7 +84,7 @@ window.siteData = {
       category: "Research project · ongoing thesis work",
       period: "2025 – Present",
       summary:
-        "Investigating how to recover learning signal when standard RL produces almost no reward on very difficult reasoning tasks. Current work explores teacher hints and minimal solution prefixes to make hard examples learnable instead of simply uninformative.",
+        "Developed a minimal-prefix solution-conditioning method for hard reasoning problems where standard RLVR receives almost no reward signal. The method restores learning signal on problems with zero pass@16 and improves the unhinted target benchmark by +5 pp, directly addressing the cold-start problem in RL for verifiable reasoning.",
       tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
       featured: true,
       links: []
