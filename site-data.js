@@ -81,7 +81,7 @@ window.siteData = {
     },
     {
       title: "RL for Hard Problems with Near-Zero Reward",
-      category: "Research project · ongoing thesis work",
+      category: "Research project · thesis work",
       period: "2025 – Present",
       summary:
         "Developed a minimal-prefix solution-conditioning method for hard reasoning problems where standard RLVR receives almost no reward signal. The method restores learning signal on problems with zero pass@16 and improves the unhinted target benchmark by +5 pp, directly addressing the cold-start problem in RL for verifiable reasoning.",
@@ -91,7 +91,7 @@ window.siteData = {
     },
     {
       title: "Test-Time Inference for Mathematical Reasoning",
-      category: "Research project · ongoing thesis work",
+      category: "Research project · thesis work",
       period: "2025 – Present",
       summary:
         "Implemented and evaluated recursive reasoning, self-refinement, and best-of-N inference strategies on hard mathematical reasoning benchmarks. The project analyzes when additional test-time compute improves reasoning performance, when gains plateau, and how such gains could potentially be distilled into the base model.",
