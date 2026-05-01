@@ -70,7 +70,7 @@ window.siteData = {
 
   projects: [
     {
-      title: " Stable RL Post-Training for LLM Reasoning",
+      title: "Stable RL Post-Training for LLM Reasoning",
       category: "ETH Zurich research · Data Analytics Lab · confidential, manuscript in preparation",
       period: "2025 – Present",
       summary:
