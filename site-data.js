@@ -70,7 +70,7 @@ window.siteData = {
 
   projects: [
     {
-      title: "Master’s Thesis Research — Reasoning in LLMs: RLVR & Test-Time Recursion",
+      title: "Master’s Thesis — Stable RL Post-Training for LLM Reasoning",
       category: "ETH Zurich research · Data Analytics Lab",
       period: "2025 – Present",
       summary:
