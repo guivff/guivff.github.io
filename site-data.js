@@ -87,7 +87,9 @@ window.siteData = {
         "Developed a minimal-prefix solution-conditioning method for hard reasoning problems where standard RLVR receives almost no reward signal. The method restores learning signal on problems with zero pass@16 and improves the unhinted target benchmark by +5 pp, directly addressing the cold-start problem in RL for verifiable reasoning.",
       tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
       featured: true,
-      links: []
+      links: [
+        { label: "Code", href: "https://github.com/guivff/prefix-guided-rlvr" }
+        ]
     },
     {
       title: "Test-Time Inference for Mathematical Reasoning",
