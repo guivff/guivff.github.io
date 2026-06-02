@@ -70,6 +70,18 @@ window.siteData = {
 
   projects: [
     {
+      title: "Recursive Branch Refinement: Load-Bearing Test-Time Reasoning",
+      category: "Workshop preprint · solo · Qwen3-4B · single-seed, full study in progress",
+      period: "2026",
+      summary: "A test-time reasoning method that spends compute vertically instead of horizontally: it detects the first load-bearing 'pivot' in a model's chain of thought (judge-free, from per-token entropy), clusters rollouts by their branch at that pivot, and resamples only the top-scoring branches. At a matched 16-sample budget on Qwen3-4B x AIME-2025, RBR-lite reaches 53.3% vs 50.0% self-consistency and 33.3% best-of-N; three independent pivot detectors agree within 8pp, and branch concentration stays positive across all benchmarks. It also reports an honest boundary condition: where it ties the baselines, ~80% of failures are problems no sampler solves.",
+      tags: ["Test-time compute", "LLM reasoning", "Self-consistency", "AIME"],
+      featured: true,
+      links: [
+        { label: "Paper", href: "https://github.com/guivff/rbr/blob/main/paper/PAPER.md" },
+        { label: "Code", href: "https://github.com/guivff/rbr" }
+      ]
+    },
+    {
       title: "Stable RL Post-Training for LLM Reasoning",
       category: "ETH Zurich research · Data Analytics Lab · confidential, manuscript in preparation",
       period: "2025 – Present",
