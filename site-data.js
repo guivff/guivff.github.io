@@ -102,16 +102,6 @@ window.siteData = {
       links: []
     },
     {
-      title: "Supply-Chain Graph Learning (ADIA)",
-      category: "Research project · semester thesis",
-      period: "2024",
-      summary:
-        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
-      tags: ["GNNs", "Graph Transformers", "Finance"],
-      featured: true,
-      links: []
-    },
-    {
       title: "Recursive Branch Refinement: Load-Bearing Test-Time Reasoning",
       category: "Personal project · solo · Qwen3-4B · single-seed, preliminary",
       period: "2026",
@@ -122,6 +112,16 @@ window.siteData = {
         { label: "Write-up", href: "https://github.com/guivff/rbr/blob/main/paper/PAPER.md" },
         { label: "Code", href: "https://github.com/guivff/rbr" }
       ]
+    },
+    {
+      title: "Supply-Chain Graph Learning (ADIA)",
+      category: "Research project · semester thesis",
+      period: "2024",
+      summary:
+        "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
+      tags: ["GNNs", "Graph Transformers", "Finance"],
+      featured: true,
+      links: []
     },
     {
       title: "Task Sequencing in Continual Learning",
