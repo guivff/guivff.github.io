@@ -6,7 +6,7 @@
     <title>Guiv Farmanfarmaian | ML Research & Engineering</title>
     <meta
       name="description"
-      content="Personal website of Guiv Farmanfarmaian, an ETH Zurich AI graduate interested in ML research and ML engineering."
+      content="Personal website of Guiv Farmanfarmaian, an ETH Zurich AI graduate interested in ML research and ML engineering. Author of &quot;Selection, Recombination, or a Fresh Solve?&quot;, accepted at the COLM 2026 Workshop on Efficient Reasoning."
     />
     <meta name="theme-color" content="#f4f7fb" />
     <meta name="author" content="Guiv Farmanfarmaian" />
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -114,6 +114,13 @@
         </div>
       </section>
 
+      <section class="section section--compact section--news" aria-labelledby="news-heading">
+        <div class="container">
+          <h2 class="visually-hidden" id="news-heading">News</h2>
+          <ul class="news-list reveal" id="news-list" hidden></ul>
+        </div>
+      </section>
+
       <section class="section section--compact">
         <div class="container">
           <div class="info-grid" id="highlights-grid"></div>
@@ -133,6 +140,16 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="section-kicker">Research</p>
+          </div>
+
+          <div class="projects-group reveal" id="publications" tabindex="-1" hidden>
+            <div class="projects-subhead pub-head">
+              <h3 class="pub-head__title">Publications</h3>
+              <p class="pub-head__note">
+                Peer-reviewed and workshop papers.
+              </p>
+            </div>
+            <div class="pub-list" id="publications-list"></div>
           </div>
 
           <div class="projects-group reveal" id="featured-projects-block">

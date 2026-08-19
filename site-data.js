@@ -2,8 +2,55 @@ window.siteData = {
   seo: {
     title: "Guiv Farmanfarmaian | ML Research Engineer / Scientist",
     description:
-      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference."
+      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference. Author of \u201cSelection, Recombination, or a Fresh Solve?\u201d, accepted at the COLM 2026 Workshop on Efficient Reasoning."
   },
+
+  // Short announcements shown in the news banner under the hero.
+  // Leave the array empty to hide the banner entirely.
+  news: [
+    {
+      date: "Aug 2026",
+      dateTime: "2026-08",
+      text: "Paper accepted at the COLM 2026 Workshop on Efficient Reasoning",
+      href: "#publications",
+      linkLabel: "Read the paper entry"
+    }
+  ],
+
+  // Peer-reviewed / workshop papers, newest first. Rendered at the top of the
+  // Research section, above the research project cards.
+  publications: [
+    {
+      badge: "COLM 2026 Workshop",
+      title:
+        "Selection, Recombination, or a Fresh Solve? A Candidate-Free Control for Single-Pass Test-Time Aggregation",
+      authors: "Guiv Farmanfarmaian",
+      affiliation: "ETH Zurich",
+      venue: "Accepted at the COLM 2026 Workshop on Efficient Reasoning",
+      year: "2026",
+      summary:
+        "Introduces a candidate-free control for test-time aggregation and shows a sign reversal: conditioning on candidate solutions helps when multiple candidates are correct but hurts when all are wrong, reversing the usual interpretation of \u201call-wrong recovery\u201d.",
+      // Links with an empty `href` are skipped when rendering, so the arXiv /
+      // OpenReview entry stays hidden until a real URL is filled in below.
+      links: [
+        {
+          label: "PDF",
+          href: "assets/papers/farmanfarmaian_colm2026_candidate_free_control.pdf"
+        },
+        { label: "arXiv", href: "" }
+      ],
+      bibtexKey: "farmanfarmaian2026candidatefree",
+      bibtex: [
+        "@inproceedings{farmanfarmaian2026candidatefree,",
+        "  title={Selection, Recombination, or a Fresh Solve? A Candidate-Free",
+        "         Control for Single-Pass Test-Time Aggregation},",
+        "  author={Farmanfarmaian, Guiv},",
+        "  booktitle={COLM 2026 Workshop on Efficient Reasoning},",
+        "  year={2026}",
+        "}"
+      ].join("\n")
+    }
+  ],
 
   personal: {
     name: "Guiv Farmanfarmaian",
@@ -332,7 +379,46 @@ window.siteData = {
     href: "notes/your-note.html"
   }
 
-  4) TECHNICAL REPORT / WRITE-UP LINK
+  4) PUBLICATION ENTRY (Research section, above the research project cards)
+  Add this inside the top-level `publications` array. Links with an empty
+  `href` are skipped, so you can leave `arXiv` blank until the URL exists.
+
+  {
+    badge: "Venue 2026",
+    title: "Paper title",
+    authors: "Farmanfarmaian, Guiv",
+    affiliation: "ETH Zurich",
+    venue: "Accepted at Venue 2026",
+    year: "2026",
+    summary: "One or two sentences on the contribution.",
+    links: [
+      { label: "PDF", href: "assets/papers/your-paper.pdf" },
+      { label: "arXiv", href: "" }
+    ],
+    bibtexKey: "citationkey",
+    bibtex: [
+      "@inproceedings{citationkey,",
+      "  title={Paper title},",
+      "  author={Farmanfarmaian, Guiv},",
+      "  booktitle={Venue 2026},",
+      "  year={2026}",
+      "}"
+    ].join("\n")
+  }
+
+  5) NEWS ENTRY
+  Add this inside the top-level `news` array (newest first). An empty array
+  hides the banner under the hero.
+
+  {
+    date: "Aug 2026",
+    dateTime: "2026-08",
+    text: "Short announcement",
+    href: "#publications",
+    linkLabel: "Read the paper entry"
+  }
+
+  6) TECHNICAL REPORT / WRITE-UP LINK
   Add this inside `research.publications` if you want another report-style link.
 
   {
