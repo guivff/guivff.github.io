@@ -35,7 +35,7 @@ window.siteData = {
       links: [
         {
           label: "PDF",
-          href: "assets/papers/farmanfarmaian_colm2026_candidate_free_control.pdf"
+          href: "assets/papers/farmanfarmaiancolm2026_candidate_free_control.pdf"
         },
         { label: "arXiv", href: "" }
       ],
