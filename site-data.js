@@ -1,6 +1,6 @@
 window.siteData = {
   seo: {
-    title: "Guiv Farmanfarmaian | ML Research Engineer / Scientist",
+    title: "Guiv Farmanfarmaian | ML Research & Engineering",
     description:
       "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference. Author of \u201cSelection, Recombination, or a Fresh Solve?\u201d, accepted at the COLM 2026 Workshop on Efficient Reasoning."
   },
@@ -61,16 +61,16 @@ window.siteData = {
       "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
     heroFacts: [
       {
-        label: "Positions sought",
-        value: "ML Research Engineer · ML Research Scientist"
-      },
-      {
-        label: "Citizenships",
-        value: "Swiss · US · Canadian"
+        label: "Latest publication",
+        value: "COLM 2026 Workshop on Efficient Reasoning"
       },
       {
         label: "Current lab",
         value: "Data Analytics Lab, ETH Zurich"
+      },
+      {
+        label: "Citizenships",
+        value: "Swiss · US · Canadian"
       }
     ],
     meta: [
@@ -88,15 +88,15 @@ window.siteData = {
   ],
 
   highlights: [
-    { label: "Education", value: "ETH Zurich · MSc CS (AI)" },
-    { label: "Background", value: "BSc Mathematics" },
-    { label: "Current thesis", value: "Stable RL Post-Training for LLM Reasoning" },
-    { label: "Roles", value: "ML Research Engineer · ML Research Scientist" }
+    { label: "Education", value: "MSc Computer Science · ETH Zurich" },
+    { label: "Background", value: "BSc Mathematics · ETH Zurich" },
+    { label: "Current research", value: "Stable RL post-training for LLM reasoning" },
+    { label: "Latest paper", value: "COLM 2026 Workshop on Efficient Reasoning" }
   ],
 
   about: [
-    "I recently graduated with a Master’s in Computer Science from ETH Zurich, where I previously earned a BSc in Mathematics, and I am currently completing my mandatory Swiss national service.",
-    "My recent work has focused on reasoning in language models, including reinforcement learning for hard reasoning problems, test-time recursion, and stabilizing GRPO-based RLVR. More broadly, I am interested in building truly intelligent systems. I believe progress toward this will require advances in sample-efficient learning, continual learning, and novel model architectures."
+    "I am a machine learning researcher working on reasoning in large language models. I recently completed my MSc in Computer Science at ETH Zurich, where I also earned a BSc in Mathematics, and I am currently completing my Swiss national service.",
+    "My recent research spans reinforcement learning on hard reasoning problems, stabilizing GRPO-based RLVR post-training, and test-time inference. More broadly, I am interested in what it takes to build genuinely intelligent systems — I expect progress to require advances in sample-efficient learning, continual learning, and new model architectures."
   ],
 
   interests: [
@@ -108,26 +108,7 @@ window.siteData = {
     "Continual learning"
   ],
 
-  goals: [
-    "ML Research Engineer roles with strong experimental and implementation depth.",
-    "ML Research Scientist roles in reasoning, reinforcement learning, and language models.",
-    "Work spanning training, evaluation, post-training, and careful empirical analysis.",
-    "Teams that value both research taste and high-quality execution." 
-  ],
-
   projects: [
-    {
-      title: "Recursive Branch Refinement: Load-Bearing Test-Time Reasoning",
-      category: "Workshop preprint · solo · Qwen3-4B · single-seed, full study in progress",
-      period: "2026",
-      summary: "A test-time reasoning method that spends compute vertically instead of horizontally: it detects the first load-bearing 'pivot' in a model's chain of thought (judge-free, from per-token entropy), clusters rollouts by their branch at that pivot, and resamples only the top-scoring branches. At a matched 16-sample budget on Qwen3-4B x AIME-2025, RBR-lite reaches 53.3% vs 50.0% self-consistency and 33.3% best-of-N; three independent pivot detectors agree within 8pp, and branch concentration stays positive across all benchmarks. It also reports an honest boundary condition: where it ties the baselines, ~80% of failures are problems no sampler solves.",
-      tags: ["Test-time compute", "LLM reasoning", "Self-consistency", "AIME"],
-      featured: true,
-      links: [
-        { label: "Paper", href: "https://github.com/guivff/rbr/blob/main/paper/PAPER.md" },
-        { label: "Code", href: "https://github.com/guivff/rbr" }
-      ]
-    },
     {
       title: "Stable RL Post-Training for LLM Reasoning",
       category: "ETH Zurich research · Data Analytics Lab · confidential, manuscript in preparation",
@@ -317,7 +298,7 @@ window.siteData = {
 
   contact: {
     copy:
-      "I am especially interested in ML Research Engineer, ML Research Scientist, Applied Scientist, and ML Engineer roles. Feel free to reach out about opportunities, collaboration, or interesting problems.",
+      "Happy to talk about reasoning in language models, reinforcement learning, and test-time inference — or anything else you think I would find interesting. Email is the fastest way to reach me.",
     links: [
       { label: "Email me", href: "mailto:guivff@gmail.com", style: "primary" },
       { label: "GitHub", href: "https://github.com/guivff", style: "ghost" }

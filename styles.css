@@ -922,7 +922,7 @@ a.news-item__link:focus-visible .news-item__arrow {
   justify-content: space-between;
   gap: 1rem;
   max-width: none;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.1rem;
 }
 
 .pub-head__title {
