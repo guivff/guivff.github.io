@@ -457,7 +457,7 @@
     const grid = $("#notes-grid");
 
     if (!notes.length) {
-      if (section) section.hidden = false;
+      if (section) section.hidden = true;
       return;
     }
 

@@ -51,10 +51,10 @@
         <div class="nav-wrap" id="nav-wrap">
           <nav class="site-nav" id="site-nav" aria-label="Primary">
             <a href="#about">About</a>
+            <a href="#publications">Publications</a>
             <a href="#research">Research</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
-            <a href="#notes">Notes</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -121,6 +121,16 @@
         </div>
       </section>
 
+      <section class="section" id="publications" tabindex="-1" hidden>
+        <div class="container">
+          <div class="pub-head reveal">
+            <h2 class="pub-head__title">Publications</h2>
+            <p class="pub-head__note">Peer-reviewed and workshop papers</p>
+          </div>
+          <div class="pub-list reveal" id="publications-list"></div>
+        </div>
+      </section>
+
       <section class="section section--compact">
         <div class="container">
           <div class="info-grid" id="highlights-grid"></div>
@@ -140,24 +150,13 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="section-kicker">Research</p>
-          </div>
-
-          <div class="projects-group reveal" id="publications" tabindex="-1" hidden>
-            <div class="projects-subhead pub-head">
-              <h3 class="pub-head__title">Publications</h3>
-              <p class="pub-head__note">
-                Peer-reviewed and workshop papers.
-              </p>
-            </div>
-            <div class="pub-list" id="publications-list"></div>
+            <h2>Research projects</h2>
+            <p class="section-lead">
+              Ongoing and recent research on reasoning in language models: RL post-training, learning on hard problems, test-time inference, and graph learning.
+            </p>
           </div>
 
           <div class="projects-group reveal" id="featured-projects-block">
-            <div class="projects-subhead">
-              <h3>Research projects</h3>
-              <p class="muted">
-                Research across language-model reasoning, RL for hard reasoning, stable RLVR training, test-time inference and Graph Neural Networks.              </p>
-            </div>
             <div class="card-grid card-grid--featured" id="featured-projects-grid"></div>
           </div>
         </div>
