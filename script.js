@@ -235,6 +235,199 @@
     return;
   }
 
+  function hasHref(link) {
+    const href = (link?.href || "").trim();
+    return href.length > 0 && href !== "#";
+  }
+
+  function renderNews() {
+    const list = $("#news-list");
+    const news = safeArray(data.news);
+    if (!list) return;
+
+    if (!news.length) {
+      list.hidden = true;
+      return;
+    }
+
+    news.forEach((item) => {
+      const li = create("li", "news-item");
+      const wrap = item.href ? create("a", "news-item__link") : create("div", "news-item__link");
+
+      if (item.href) {
+        wrap.href = item.href;
+        if (item.href.startsWith("http")) {
+          wrap.target = "_blank";
+          wrap.rel = "noreferrer";
+        }
+      }
+
+      const marker = create("span", "marker-square");
+      marker.setAttribute("aria-hidden", "true");
+      wrap.appendChild(marker);
+
+      if (item.date) {
+        const date = create(item.dateTime ? "time" : "span", "news-item__date", item.date);
+        if (item.dateTime) date.dateTime = item.dateTime;
+        wrap.appendChild(date);
+      }
+
+      wrap.appendChild(create("span", "news-item__text", item.text || ""));
+
+      if (item.href) {
+        if (item.linkLabel) {
+          wrap.appendChild(create("span", "visually-hidden", ` \u2014 ${item.linkLabel}`));
+        }
+        const arrow = create("span", "news-item__arrow", "\u2192");
+        arrow.setAttribute("aria-hidden", "true");
+        wrap.appendChild(arrow);
+      }
+
+      li.appendChild(wrap);
+      list.appendChild(li);
+    });
+
+    list.hidden = false;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard?.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+
+    return new Promise((resolve, reject) => {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.top = "-1000px";
+      document.body.appendChild(area);
+      area.select();
+      try {
+        const ok = document.execCommand("copy");
+        document.body.removeChild(area);
+        ok ? resolve() : reject(new Error("copy-failed"));
+      } catch (error) {
+        document.body.removeChild(area);
+        reject(error);
+      }
+    });
+  }
+
+  function buildBibtexBlock(publication, index) {
+    const details = create("details", "bibtex");
+    const summary = create("summary", "bibtex__summary", "BibTeX");
+    details.appendChild(summary);
+
+    const body = create("div", "bibtex__body");
+
+    const bar = create("div", "bibtex__bar");
+    const copyButton = create("button", "bibtex__copy", "Copy");
+    copyButton.type = "button";
+
+    const codeId = `bibtex-code-${index}`;
+    copyButton.setAttribute("aria-label", `Copy BibTeX citation for ${publication.title || "this paper"}`);
+    copyButton.setAttribute("aria-controls", codeId);
+
+    const status = create("span", "bibtex__status");
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+
+    bar.append(copyButton, status);
+
+    const pre = create("pre", "bibtex__code");
+    pre.id = codeId;
+    pre.tabIndex = 0;
+    pre.appendChild(create("code", "", publication.bibtex || ""));
+
+    let resetTimer = null;
+    copyButton.addEventListener("click", () => {
+      copyText(publication.bibtex || "")
+        .then(() => {
+          copyButton.textContent = "Copied";
+          status.textContent = "BibTeX copied to clipboard";
+        })
+        .catch(() => {
+          copyButton.textContent = "Copy failed";
+          status.textContent = "Copy failed. Select the text and copy manually.";
+        })
+        .finally(() => {
+          window.clearTimeout(resetTimer);
+          resetTimer = window.setTimeout(() => {
+            copyButton.textContent = "Copy";
+            status.textContent = "";
+          }, 2400);
+        });
+    });
+
+    body.append(bar, pre);
+    details.appendChild(body);
+    return details;
+  }
+
+  function renderPublications() {
+    const block = $("#publications");
+    const list = $("#publications-list");
+    const publications = safeArray(data.publications);
+
+    if (!block || !list) return;
+
+    if (!publications.length) {
+      block.hidden = true;
+      return;
+    }
+
+    publications.forEach((publication, index) => {
+      const entry = create("article", "pub-entry");
+
+      const meta = create("div", "pub-entry__meta");
+      if (publication.badge) {
+        const badge = create("p", "pub-entry__badge");
+        const marker = create("span", "marker-square");
+        marker.setAttribute("aria-hidden", "true");
+        badge.append(marker, document.createTextNode(publication.badge));
+        meta.appendChild(badge);
+      }
+      if (publication.year) {
+        meta.appendChild(create("p", "pub-entry__year", publication.year));
+      }
+
+      const body = create("div", "pub-entry__body");
+      body.appendChild(create("h4", "pub-entry__title", publication.title || "Untitled paper"));
+
+      const byline = [publication.authors, publication.affiliation].filter(Boolean).join(" \u00b7 ");
+      if (byline) body.appendChild(create("p", "pub-entry__authors", byline));
+
+      if (publication.venue) {
+        body.appendChild(create("p", "pub-entry__venue", publication.venue));
+      }
+
+      if (publication.summary) {
+        body.appendChild(create("p", "pub-entry__summary", publication.summary));
+      }
+
+      const links = safeArray(publication.links).filter(hasHref);
+      if (links.length) {
+        const linkRow = create("div", "pub-entry__links");
+        links.forEach((link) => {
+          const a = buildInlineLink(link);
+          a.classList.add("editorial-link");
+          linkRow.appendChild(a);
+        });
+        body.appendChild(linkRow);
+      }
+
+      if (publication.bibtex) {
+        body.appendChild(buildBibtexBlock(publication, index));
+      }
+
+      entry.append(meta, body);
+      list.appendChild(entry);
+    });
+
+    block.hidden = false;
+  }
+
   function renderExperience() {
     const timeline = $("#experience-timeline");
     safeArray(data.experience).forEach((item) => {
@@ -338,7 +531,9 @@
   renderTheme();
   renderHeaderAndHero();
   renderHighlights();
+  renderNews();
   renderAbout();
+  renderPublications();
   renderProjects();
   renderExperience();
   renderNotes();
