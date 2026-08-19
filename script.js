@@ -127,11 +127,9 @@
     });
 
     const heroFacts = $("#hero-facts");
+    heroFacts.className = "facts";
     safeArray(personal?.heroFacts).forEach((item) => {
-      const row = create("div", "fact-row");
-      row.appendChild(create("span", "fact-row__label", item.label || ""));
-      row.appendChild(create("strong", "fact-row__value", item.value || ""));
-      heroFacts.appendChild(row);
+      heroFacts.appendChild(buildFactRow(item.label, item.value));
     });
 
     const imagePath = personal?.profileImage;
@@ -150,14 +148,21 @@
     if (footerNote && data.footer?.note) footerNote.textContent = data.footer.note;
   }
 
+  function buildFactRow(label, value) {
+    const row = create("div", "facts__row");
+    row.append(
+      create("dt", "facts__label", label || ""),
+      create("dd", "facts__value", value || "")
+    );
+    return row;
+  }
+
   function renderHighlights() {
     const wrap = $("#highlights-grid");
+    if (!wrap) return;
+    wrap.className = "facts facts--row reveal";
     safeArray(data.highlights).forEach((item) => {
-      const card = create("div", "info-card reveal");
-      const label = create("span", "info-card__label", item.label || "");
-      const value = create("div", "info-card__value", item.value || "");
-      card.append(label, value);
-      wrap.appendChild(card);
+      wrap.appendChild(buildFactRow(item.label, item.value));
     });
   }
 
@@ -195,6 +200,20 @@
 
       const summary = create("p", "project-card__summary", project.summary || "");
 
+      const metrics = safeArray(project.metrics);
+      let metricsRail = null;
+      if (metrics.length) {
+        metricsRail = create("dl", "metrics");
+        metrics.forEach((metric) => {
+          const item = create("div", "metric");
+          item.append(
+            create("dt", "metric__key", metric.key || ""),
+            create("dd", "metric__value", metric.value || "")
+          );
+          metricsRail.appendChild(item);
+        });
+      }
+
       const footer = create("div", "project-card__footer");
       const tags = create("div", "tag-list");
       safeArray(project.tags).forEach((tag) => tags.appendChild(create("span", "tag", tag)));
@@ -210,6 +229,7 @@
       }
 
       card.append(top, summary, footer);
+      if (metricsRail) card.appendChild(metricsRail);
       grid.appendChild(card);
     });
   }
@@ -509,7 +529,8 @@
 
   function initReveal() {
     const elements = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) {
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) {
       elements.forEach((el) => el.classList.add("is-visible"));
       return;
     }
