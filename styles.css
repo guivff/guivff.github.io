@@ -224,7 +224,7 @@ time {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .site-nav {
@@ -253,7 +253,7 @@ time {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .menu-toggle,
@@ -330,7 +330,8 @@ time {
   border-bottom-color: var(--rule);
 }
 
-.header-cv-link {
+.header-cv-link,
+.header-link {
   padding-block: 0.25rem;
 }
 
@@ -1187,7 +1188,7 @@ a.news-item__link:hover .news-item__text {
 }
 
 /* Header collapses before the desktop nav can overflow. */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .header-inner {
     position: relative;
   }
