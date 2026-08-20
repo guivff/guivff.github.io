@@ -115,6 +115,11 @@ window.siteData = {
       period: "2025 – Present",
       summary:
     "My current research at ETH Zurich develops new methods for stable RL post-training of language models on mathematical reasoning problems. I designed a GRPO variant that prevents RLVR mode collapse, yielding +54% policy entropy, ~9× lower KL divergence vs. GRPO, and +3 pp on unhinted MATH-500 pass@8. Selected technical details remain confidential while the manuscript is in preparation.",
+      metrics: [
+        { value: "+54%", key: "policy entropy" },
+        { value: "~9\u00d7", key: "lower KL vs. GRPO" },
+        { value: "+3 pp", key: "MATH-500 pass@8" }
+      ],
       tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
       featured: true,
       links: []
@@ -125,6 +130,10 @@ window.siteData = {
       period: "2025 – Present",
       summary:
         "Developed a minimal-prefix solution-conditioning method for hard reasoning problems where standard RLVR receives almost no reward signal. The method restores learning signal on problems with zero pass@16 and improves the unhinted target benchmark by +5 pp, directly addressing the cold-start problem in RL for verifiable reasoning.",
+      metrics: [
+        { value: "+5 pp", key: "unhinted target benchmark" },
+        { value: "0", key: "baseline pass@16" }
+      ],
       tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
       featured: true,
       links: [
@@ -156,6 +165,10 @@ window.siteData = {
       period: "2024",
       summary:
         "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
+      metrics: [
+        { value: "79.8 \u2192 91.6%", key: "final accuracy, MNIST-10" },
+        { value: "24.3 \u2192 9.4%", key: "forgetting" }
+      ],
       tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
       featured: false,
       links: [
@@ -168,6 +181,7 @@ window.siteData = {
       period: "2024",
       summary:
         "Developed and rigorously evaluated a transformer-based approach to sentiment classification on noisy Twitter text. We combined tweet-specific preprocessing, fine-tuning of BERT-family backbones, custom classification heads, and ensemble methods. We studied preprocessing choices such as duplicate-voting, hashtag segmentation, and slang normalization. Additionally, we ran extensive ablations over several classification heads, such as additive attention, self-attention, and KAN-based classifiers. The final system achieved 90.7% test accuracy.",
+      metrics: [{ value: "90.7%", key: "test accuracy" }],
       tags: ["NLP", "Transformers", "BERTweet", "PyTorch"],
       featured: false,
       links: [
@@ -192,6 +206,7 @@ window.siteData = {
       period: "2024",
       summary:
         "This repository contains our implementation of an attention-augmented Graph Convolutional Network for 3D human motion prediction on the AMASS dataset. The method uses motion attention to retrieve relevant historical subsequences and combines them with a residual GCN in the DCT domain to forecast future poses. We benchmarked the approach against various transformer, recurrent, and graph-based baselines, and it achieved the best performance in our study with 1.69 joint-angle discrepancy on the public test set.",
+      metrics: [{ value: "1.69", key: "joint-angle discrepancy" }],
       tags: ["Computer Vision", "Motion Prediction", "GCN", "AMASS"],
       featured: false,
       links: [
