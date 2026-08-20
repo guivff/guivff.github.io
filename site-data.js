@@ -30,14 +30,14 @@ window.siteData = {
       year: "2026",
       summary:
         "Introduces a candidate-free control for test-time aggregation and shows a sign reversal: conditioning on candidate solutions helps when multiple candidates are correct but hurts when all are wrong, reversing the usual interpretation of \u201call-wrong recovery\u201d.",
-      // Links with an empty `href` are skipped when rendering, so the arXiv /
-      // OpenReview entry stays hidden until a real URL is filled in below.
+      // Links with an empty `href` are skipped when rendering.
       links: [
         {
           label: "PDF",
           href: "assets/papers/farmanfarmaiancolm2026_candidate_free_control.pdf"
         },
-        { label: "arXiv", href: "" }
+        { label: "arXiv", href: "https://arxiv.org/abs/2608.18379" },
+        { label: "OpenReview", href: "https://openreview.net/forum?id=kYFPvwqplw" }
       ],
       bibtexKey: "farmanfarmaian2026candidatefree",
       bibtex: [
