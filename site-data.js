@@ -37,7 +37,11 @@ window.siteData = {
           href: "assets/papers/farmanfarmaiancolm2026_candidate_free_control.pdf"
         },
         { label: "arXiv", href: "https://arxiv.org/abs/2608.18379" },
-        { label: "OpenReview", href: "https://openreview.net/forum?id=kYFPvwqplw" }
+        { label: "OpenReview", href: "https://openreview.net/forum?id=kYFPvwqplw" },
+        {
+          label: "Code",
+          href: "https://github.com/guivff/candidate-free-test-time-aggregation"
+        }
       ],
       bibtexKey: "farmanfarmaian2026candidatefree",
       bibtex: [
