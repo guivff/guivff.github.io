@@ -224,13 +224,13 @@ time {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.05rem;
 }
 
 .site-nav a {
@@ -253,7 +253,7 @@ time {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .menu-toggle,
@@ -418,13 +418,28 @@ a.news-item__link:hover .news-item__text {
   margin: 0 0 1.5rem;
 }
 
-.hero-tagline {
+.hero-role {
+  margin: 0 0 0.35rem;
   font-family: var(--font-serif);
   font-size: var(--step-2);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.hero-tagline {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
   max-width: var(--measure);
-  margin: 0 0 1.25rem;
+}
+
+.hero h1 + .hero-role {
+  margin-top: -0.9rem;
 }
 
 .hero-intro {
@@ -1105,6 +1120,151 @@ a.news-item__link:hover .news-item__text {
 }
 
 /* ========================
+   About — kicker column + prose
+   ======================== */
+.section--about {
+  padding-top: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.section-head--side {
+  margin-bottom: 0;
+}
+
+.section-head--side h2 {
+  font-size: var(--step-2);
+}
+
+.about-prose p {
+  color: var(--ink);
+}
+
+.interests {
+  margin-top: 1.75rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* ========================
+   Current — compact rule-separated rows under the hero
+   ======================== */
+.section--current {
+  padding-top: 0;
+}
+
+.current-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.current-item {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 0.35rem 2.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.current-item__status {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.current-item__body {
+  min-width: 0;
+}
+
+.current-item__title {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-serif);
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.current-item__link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.current-item__link:hover {
+  color: var(--accent);
+  border-bottom-color: currentColor;
+}
+
+.current-item__text {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+  max-width: var(--measure);
+}
+
+/* ========================
+   Research groups — current vs. completed
+   ======================== */
+.research-group + .research-group {
+  margin-top: 3rem;
+}
+
+.research-group:focus {
+  outline: none;
+}
+
+.research-group__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.research-group__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--micro);
+  font-weight: 500;
+  letter-spacing: var(--tracking-micro);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.research-group__lead {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+
+/* Completed work: hollow marker and muted eyebrow, no colour. */
+.research-group--archived .research-group__title .marker-square {
+  background: transparent;
+  border: 1px solid var(--ink-muted);
+}
+
+.project-card--archived .project-card__eyebrow {
+  color: var(--ink-muted);
+}
+
+/* ========================
    Responsive
    ======================== */
 @media (max-width: 980px) {
@@ -1135,9 +1295,19 @@ a.news-item__link:hover .news-item__text {
 
   .project-card,
   .pub-entry,
-  .timeline-card {
+  .timeline-card,
+  .about-grid,
+  .current-item {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .about-grid {
+    gap: 1.25rem;
+  }
+
+  .current-item {
+    gap: 0.25rem;
   }
 
   .project-card__top,
@@ -1188,7 +1358,7 @@ a.news-item__link:hover .news-item__text {
 }
 
 /* Header collapses before the desktop nav can overflow. */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .header-inner {
     position: relative;
   }

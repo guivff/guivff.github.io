@@ -1,24 +1,18 @@
 window.siteData = {
   seo: {
-    title: "Guiv Farmanfarmaian | ML Research & Engineering",
+    title: "Guiv Farmanfarmaian | Machine Learning Researcher",
     description:
-      "ETH Zurich ML researcher focused on reasoning in language models, reinforcement learning, and test-time inference. Author of \u201cSelection, Recombination, or a Fresh Solve?\u201d, accepted at the COLM 2026 Workshop on Efficient Reasoning."
+      "Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; author of a COLM 2026 Efficient Reasoning workshop paper.",
+    url: "https://guivff.github.io/",
+    image: "https://guivff.github.io/assets/guivff_pic.jpg"
   },
 
-  // Short announcements shown in the news banner under the hero.
-  // Leave the array empty to hide the banner entirely.
-  news: [
-    {
-      date: "Aug 2026",
-      dateTime: "2026-08",
-      text: "Paper accepted at the COLM 2026 Workshop on Efficient Reasoning",
-      href: "#publications",
-      linkLabel: "Read the paper entry"
-    }
-  ],
+  // Short dated announcements shown in a banner under the hero.
+  // Leave the array empty to hide the banner entirely. The standing items
+  // (current research, SPAR, latest paper) live in `current` instead.
+  news: [],
 
-  // Peer-reviewed / workshop papers, newest first. Rendered at the top of the
-  // Research section, above the research project cards.
+  // Peer-reviewed / workshop papers, newest first.
   publications: [
     {
       badge: "COLM 2026 Workshop",
@@ -29,7 +23,7 @@ window.siteData = {
       venue: "Accepted at the COLM 2026 Workshop on Efficient Reasoning",
       year: "2026",
       summary:
-        "Introduces a candidate-free control for test-time aggregation and shows a sign reversal: conditioning on candidate solutions helps when multiple candidates are correct but hurts when all are wrong, reversing the usual interpretation of \u201call-wrong recovery\u201d.",
+        "Introduces a candidate-free control for test-time aggregation and shows a sign reversal: conditioning on candidate solutions helps when multiple candidates are correct but hurts when all are wrong, reversing the usual interpretation of “all-wrong recovery”.",
       // Links with an empty `href` are skipped when rendering.
       links: [
         {
@@ -59,29 +53,32 @@ window.siteData = {
   personal: {
     name: "Guiv Farmanfarmaian",
     shortName: "GF",
-    eyebrow: "ETH Zurich · Machine Intelligence · Data Analytics Lab",
-    tagline: "",
-    focusSummary:
-      "Reasoning in language models via reinforcement learning, post-training, and test-time recursion.",
+    // Optional mono label above the name. Empty hides it.
+    eyebrow: "",
+    role: "Machine Learning Researcher",
+    tagline: "Reasoning, reinforcement learning & post-training for language models",
+    // Hero paragraphs: who I am and what I research. Keep to two short paragraphs;
+    // background and motivation live in `about`.
+    intro: [
+      "I work on reasoning and reinforcement learning in language models, in particular RL post-training with RLVR/GRPO and test-time inference.",
+      "I recently completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich, following a BSc in Mathematics. I now pursue independent research on RL post-training for reasoning models and take part in SPAR Fall 2026."
+    ],
     heroFacts: [
+      {
+        label: "Current research",
+        value: "RL post-training / RLVR for reasoning models"
+      },
+      {
+        label: "Current programme",
+        value: "SPAR Fall 2026"
+      },
       {
         label: "Latest publication",
         value: "COLM 2026 Workshop on Efficient Reasoning"
-      },
-      {
-        label: "Current lab",
-        value: "Data Analytics Lab, ETH Zurich"
-      },
-      {
-        label: "Citizenships",
-        value: "Swiss · US · Canadian"
       }
     ],
-    meta: [
-      "MSc Computer Science · ETH Zurich",
-      "BSc Mathematics · ETH Zurich",
-      "Reasoning · RL · Test-time inference"
-    ],
+    // Small uppercase line under the hero links. Empty hides it.
+    meta: [],
     profileImage: "assets/guivff_pic.jpg"
   },
 
@@ -91,47 +88,116 @@ window.siteData = {
     { label: "Email", href: "mailto:guivff@gmail.com", style: "ghost" }
   ],
 
-  highlights: [
-    { label: "Education", value: "MSc Computer Science · ETH Zurich" },
-    { label: "Background", value: "BSc Mathematics · ETH Zurich" },
-    { label: "Current research", value: "Stable RL post-training for LLM reasoning" },
-    { label: "Latest paper", value: "COLM 2026 Workshop on Efficient Reasoning" }
+  // Compact "Current" section under the hero: what I am actively doing now.
+  // `status` is a short mono label (dates or programme). `href` is optional.
+  current: [
+    {
+      status: "Independent research · 2026 – present",
+      title: "RL Post-Training for Reasoning Models",
+      text:
+        "GRPO/RLVR training dynamics, retention of reasoning modes, diversity and mode collapse, sparse rewards, and stable post-training.",
+      href: "#research-current",
+      linkLabel: "Research entry"
+    },
+    {
+      status: "SPAR Fall 2026",
+      title: "Does Phantom transfer occur in RL distillation?",
+      text: "Collaborative research project with May Dixit.",
+      href: "#research-current",
+      linkLabel: "Project entry"
+    },
+    {
+      status: "COLM 2026 · accepted Aug 2026",
+      title: "Selection, Recombination, or a Fresh Solve?",
+      text: "Accepted at the COLM 2026 Workshop on Efficient Reasoning.",
+      href: "#publications",
+      linkLabel: "Publication entry"
+    }
   ],
 
+  // Optional four-up facts row. Empty hides it.
+  highlights: [],
+
+  // About section: concise background and broader motivation. Distinct from
+  // the hero intro, which states who I am and what I research.
   about: [
-    "I am a machine learning researcher working on reasoning in large language models. I recently completed my MSc in Computer Science at ETH Zurich, where I also earned a BSc in Mathematics, and I am currently completing my Swiss national service.",
-    "My recent research spans reinforcement learning on hard reasoning problems, stabilizing GRPO-based RLVR post-training, and test-time inference. More broadly, I am interested in what it takes to build genuinely intelligent systems — I expect progress to require advances in sample-efficient learning, continual learning, and new model architectures."
+    "My route into machine learning ran through mathematics. After a BSc in Mathematics at ETH Zurich I moved to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve language-model reasoning on hard problems: RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
+    "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. Alongside this I am part of SPAR Fall 2026, studying transfer in RL distillation.",
+    "More broadly, I am interested in how learning and inference procedures can produce systems that reason robustly and keep improving beyond static pretraining. Before returning to research I worked as a data scientist at Funding Circle in London."
   ],
 
   interests: [
     "Reasoning in language models",
-    "Reinforcement learning",
-    "RL post-training",
-    "Test-time inference",
-    "Sample-efficient learning",
-    "Continual learning"
+    "Reinforcement learning & RL post-training",
+    "RLVR / GRPO",
+    "Test-time inference & inference-time compute",
+    "Sparse- and hard-reward learning",
+    "Training dynamics & diversity in post-training"
+  ],
+
+  // Research groups rendered in the Research section, in order. Projects join a
+  // group via their `group` key. Projects without a group (or with
+  // `featured: false`) fall through to the Selected Projects section.
+  researchGroups: [
+    {
+      key: "current",
+      id: "research-current",
+      title: "Current research",
+      lead: "Ongoing programmes, 2026 – present."
+    },
+    {
+      key: "eth",
+      id: "research-eth",
+      title: "Previous research — ETH Zurich",
+      lead:
+        "Completed master's and semester thesis research, 2024 – 2026. Results below are from the thesis work.",
+      archived: true
+    }
   ],
 
   projects: [
     {
-      title: "Stable RL Post-Training for LLM Reasoning",
-      category: "ETH Zurich research · Data Analytics Lab · confidential, manuscript in preparation",
-      period: "2025 – Present",
+      title: "RL Post-Training for Reasoning Models",
+      category: "Independent research · 2026 – present",
+      period: "2026 – present",
       summary:
-    "My current research at ETH Zurich develops new methods for stable RL post-training of language models on mathematical reasoning problems. I designed a GRPO variant that prevents RLVR mode collapse, yielding +54% policy entropy, ~9× lower KL divergence vs. GRPO, and +3 pp on unhinted MATH-500 pass@8. Selected technical details remain confidential while the manuscript is in preparation.",
+        "My current research studies the dynamics of reinforcement-learning post-training for language-model reasoning, particularly GRPO/RLVR. I am interested in how post-training changes the repertoire of reasoning behaviours available to a model, when rare or alternative behaviours disappear, and how training choices affect the trade-off between task performance and behavioural diversity. Related questions include learning under sparse rewards and what makes post-training stable.",
+      tags: ["RL post-training", "RLVR / GRPO", "Training dynamics", "Diversity & mode collapse", "Sparse rewards"],
+      featured: true,
+      group: "current",
+      links: []
+    },
+    {
+      title: "Does Phantom transfer occur in RL distillation?",
+      category: "SPAR Fall 2026 · research participant · with May Dixit",
+      period: "Fall 2026",
+      summary:
+        "Collaborative project within SPAR Fall 2026, with May Dixit. We investigate whether behavioural or latent properties can transfer through RL-based distillation, and under what training conditions such transfer emerges.",
+      tags: ["RL distillation", "Transfer", "Model behaviour", "AI safety"],
+      featured: true,
+      group: "current",
+      links: []
+    },
+    {
+      title: "Preventing Mode Collapse in GRPO-based RLVR",
+      category: "Master's thesis · Data Analytics Lab, ETH Zurich · confidential, manuscript in preparation",
+      period: "2025 – 2026",
+      summary:
+        "Developed a GRPO variant that conditions on teacher hints during training to prevent RLVR mode collapse on mathematical reasoning problems, yielding +54% policy entropy, ~9× lower KL divergence vs. GRPO, and +3 pp on unhinted MATH-500 pass@8. Selected technical details remain confidential while the manuscript is in preparation.",
       metrics: [
         { value: "+54%", key: "policy entropy" },
-        { value: "~9\u00d7", key: "lower KL vs. GRPO" },
+        { value: "~9×", key: "lower KL vs. GRPO" },
         { value: "+3 pp", key: "MATH-500 pass@8" }
       ],
-      tags: ["LLM reasoning", "RL post-training", "RLVR", "Training Stability"],
+      tags: ["LLM reasoning", "RL post-training", "RLVR", "Training stability"],
       featured: true,
+      group: "eth",
       links: []
     },
     {
       title: "RL for Hard Problems with Near-Zero Reward",
-      category: "Research project · thesis work",
-      period: "2025 – Present",
+      category: "Master's thesis · ETH Zurich",
+      period: "2025 – 2026",
       summary:
         "Developed a minimal-prefix solution-conditioning method for hard reasoning problems where standard RLVR receives almost no reward signal. The method restores learning signal on problems with zero pass@16 and improves the unhinted target benchmark by +5 pp, directly addressing the cold-start problem in RL for verifiable reasoning.",
       metrics: [
@@ -140,28 +206,31 @@ window.siteData = {
       ],
       tags: ["RL for hard reasoning", "Sparse reward", "Reasoning", "Learning signal recovery"],
       featured: true,
+      group: "eth",
       links: [
         { label: "Code", href: "https://github.com/guivff/prefix-guided-rlvr" }
-        ]
+      ]
     },
     {
       title: "Test-Time Inference for Mathematical Reasoning",
-      category: "Research project · thesis work",
-      period: "2025 – Present",
+      category: "Master's thesis · ETH Zurich",
+      period: "2025 – 2026",
       summary:
-        "Implemented and evaluated recursive reasoning, self-refinement, and best-of-N inference strategies on hard mathematical reasoning benchmarks. The project analyzes when additional test-time compute improves reasoning performance, when gains plateau, and how such gains could potentially be distilled into the base model.",
-      tags: ["Inference-Time Compute", "Reasoning", "LLMs", "Model Evaluation", "Test-Time Recursion"],
+        "Implemented and evaluated recursive reasoning, self-refinement, and best-of-N inference strategies on hard mathematical reasoning benchmarks. The project analyses when additional test-time compute improves reasoning performance, when gains plateau, and how such gains could potentially be distilled into the base model.",
+      tags: ["Inference-time compute", "Reasoning", "LLMs", "Model evaluation", "Test-time recursion"],
       featured: true,
+      group: "eth",
       links: []
     },
     {
       title: "Supply-Chain Graph Learning (ADIA)",
-      category: "Research project · semester thesis",
+      category: "Semester thesis · ETH Zurich × ADIA",
       period: "2024",
       summary:
         "Built and benchmarked GNN and Graph Transformer models on a large directed supply-chain graph in collaboration with a leading investment firm. The project tested whether graph structure improves financial prediction and downstream portfolio-relevant metrics, with careful ablations and baseline comparisons.",
       tags: ["GNNs", "Graph Transformers", "Finance"],
       featured: true,
+      group: "eth",
       links: []
     },
     {
@@ -170,8 +239,8 @@ window.siteData = {
       summary:
         "Formulated task sequencing as a graph-optimization problem to reduce catastrophic forgetting in continual learning without changing the learner itself. We introduced a gradient-augmented task-dissimilarity metric by combining curvature-based task interference with gradient alignment, used it to construct similarity-aware task groups, and optimized learning schedules with cut-based ordering objectives. On MNIST-10, the best schedule improved final accuracy from 79.8% to 91.6% and reduced forgetting from 24.3% to 9.4%.",
       metrics: [
-        { value: "79.8 \u2192 91.6%", key: "final accuracy, MNIST-10" },
-        { value: "24.3 \u2192 9.4%", key: "forgetting" }
+        { value: "79.8 → 91.6%", key: "final accuracy, MNIST-10" },
+        { value: "24.3 → 9.4%", key: "forgetting" }
       ],
       tags: ["Continual Learning", "Catastrophic Forgetting", "Task Similarity", "Representation Analysis"],
       featured: false,
@@ -220,14 +289,15 @@ window.siteData = {
     }
   ],
 
+  // Legacy block, not rendered by script.js. Kept for reference.
   research: {
-    thesisTitle: "Master's Thesis — Reasoning in LLMs: RLVR & Test-Time Recursion",
+    thesisTitle: "Master's Thesis — Improving LLM Reasoning on Challenging Problems",
     thesisSummary:
-      "My current thesis at ETH Zurich studies how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme is how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.",
+      "My master's thesis at ETH Zurich studied how to improve reasoning performance on hard problems using RL post-training and test-time inference. A central theme was how to recover or strengthen learning signals on difficult tasks while preserving robustness and diversity.",
     bullets: [
-      "Studying RL post-training for math reasoning with GRPO-based RLVR.",
-      "Exploring teacher-hint conditioning and minimal-solution-prefix methods to recover learning signal on hard problems.",
-      "Evaluating recursive reasoning and refinement methods for challenging reasoning benchmarks."
+      "Studied RL post-training for math reasoning with GRPO-based RLVR.",
+      "Explored teacher-hint conditioning and minimal-solution-prefix methods to recover learning signal on hard problems.",
+      "Evaluated recursive reasoning and refinement methods for challenging reasoning benchmarks."
     ],
     publications: [
       {
@@ -254,13 +324,13 @@ window.siteData = {
   experience: [
     {
       role: "Master's Thesis Researcher",
-      org: "ETH Zurich",
-      period: "2025 – Present",
+      org: "ETH Zurich · Data Analytics Lab",
+      period: "2025 – 2026",
       summary:
-        "Researching RL post-training and test-time inference methods for mathematical reasoning.",
+        "Researched RL post-training and test-time inference methods for mathematical reasoning.",
       bullets: [
-        "Developed a method to mitigate mode collapse in GRPO-based RLVR, hence preserving entropy and improving sampling diversity.",
-        "Recovering RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.",
+        "Developed a method to mitigate mode collapse in GRPO-based RLVR, preserving entropy and improving sampling diversity.",
+        "Recovered RL signal on near-zero-reward problems with teacher hints and minimal solution prefixes.",
         "Evaluated recursive test-time reasoning and self-refinement approaches for improving mathematical reasoning in LLMs, where candidate reasoning chains are iteratively refined and combined to solve difficult benchmarks."
       ]
     },
@@ -284,7 +354,7 @@ window.siteData = {
       bullets: [
         "Led tutorials for ~200 students on linear algebra and optimization for ML.",
         "Taught PyTorch fundamentals.",
-        "Introduced Course Projects and Graded Final Submissions."
+        "Introduced course projects and graded final submissions."
       ]
     },
     {
@@ -313,6 +383,28 @@ window.siteData = {
     }
   ],
 
+  education: [
+    {
+      degree: "MSc Computer Science",
+      org: "ETH Zurich",
+      period: "2023 – 2026",
+      summary: "Major in Machine Intelligence, minor in Theoretical Computer Science.",
+      bullets: [
+        "Master's thesis: Improving LLM Reasoning on Challenging Problems (supervised by Dr. Amir Joudaki and Prof. Dr. Thomas Hofmann).",
+        "Semester thesis: Improving Investment Strategies with GNNs (supervised by Florian Grötschla, Joel Mathys, and Prof. Dr. Roger Wattenhofer; in collaboration with a leading investment firm, under confidentiality)."
+      ]
+    },
+    {
+      degree: "BSc Mathematics",
+      org: "ETH Zurich",
+      period: "2020 – 2023",
+      summary: "Focus areas: number theory and theoretical computer science.",
+      bullets: [
+        "Selected coursework: Probability Theory, Convex Optimization, Number Theory I & II, Algorithms, Probability and Computing."
+      ]
+    }
+  ],
+
   notes: [],
 
   contact: {
@@ -335,26 +427,28 @@ window.siteData = {
   OPTIONAL COPY-PASTE TEMPLATES
   -----------------------------
   Keep the current visible site unchanged, but use these templates when you want
-  to add more featured research, project cards, notes, or report links later.
+  to add more research entries, project cards, notes, or report links later.
 
-  1) FEATURED RESEARCH CARD
-  Add this inside the `projects` array and keep `featured: true`.
+  1) RESEARCH ENTRY (Research section)
+  Add this inside the `projects` array with `featured: true` and a `group`
+  matching one of the keys in `researchGroups` ("current" or "eth").
 
   {
     title: "New Research Title",
-    category: "Research project · lab / collaboration",
-    period: "2026",
+    category: "Independent research · 2026 – present",
+    period: "2026 – present",
     summary:
       "Two to four sentences explaining the problem, what you did, and what mattered.",
     tags: ["Tag 1", "Tag 2", "Tag 3"],
     featured: true,
+    group: "current",
     links: [
       { label: "Code", href: "https://github.com/your-repo" },
       { label: "Report", href: "assets/reports/your-report.pdf" }
     ]
   }
 
-  2) STANDARD PROJECT CARD
+  2) STANDARD PROJECT CARD (Selected Projects section)
   Add this inside the `projects` array and keep `featured: false`.
 
   {
@@ -370,16 +464,19 @@ window.siteData = {
     ]
   }
 
-  3) NOTE CARD
-  Add this inside the `notes` array.
+  3) CURRENT ITEM (compact "Current" section under the hero)
+  Add this inside the top-level `current` array. `href` and `linkLabel` are
+  optional.
 
   {
-    title: "Short note title",
-    summary: "One or two sentences describing the note.",
-    href: "notes/your-note.html"
+    status: "Programme or dates",
+    title: "Short title",
+    text: "One sentence on what it is.",
+    href: "#research-current",
+    linkLabel: "Research entry"
   }
 
-  4) PUBLICATION ENTRY (Research section, above the research project cards)
+  4) PUBLICATION ENTRY (Publications section)
   Add this inside the top-level `publications` array. Links with an empty
   `href` are skipped, so you can leave `arXiv` blank until the URL exists.
 
@@ -418,18 +515,28 @@ window.siteData = {
     linkLabel: "Read the paper entry"
   }
 
-  6) TECHNICAL REPORT / WRITE-UP LINK
-  Add this inside `research.publications` if you want another report-style link.
+  6) EDUCATION ENTRY
+  Add this inside the top-level `education` array.
 
   {
-    title: "Report title",
-    venue: "Project report",
-    year: "2026",
-    href: "assets/reports/your-report.pdf"
+    degree: "Degree name",
+    org: "Institution",
+    period: "2020 – 2023",
+    summary: "One line on focus or major.",
+    bullets: ["Optional detail."]
+  }
+
+  7) NOTE CARD
+  Add this inside the `notes` array.
+
+  {
+    title: "Short note title",
+    summary: "One or two sentences describing the note.",
+    href: "notes/your-note.html"
   }
 
   Tip:
-  - `featured: true` => Research section card
-  - `featured: false` => Projects section card
-  - You can keep Code links as `#` temporarily, but real URLs are better.
+  - `featured: true` + `group` => Research section, under that group
+  - `featured: false` => Selected Projects section
+  - Code links set to `#` are hidden until a real URL is added.
 */

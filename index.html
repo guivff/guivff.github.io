@@ -3,13 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guiv Farmanfarmaian | ML Research & Engineering</title>
+    <title>Guiv Farmanfarmaian | Machine Learning Researcher</title>
     <meta
       name="description"
-      content="Personal website of Guiv Farmanfarmaian, an ETH Zurich AI graduate interested in ML research and ML engineering. Author of &quot;Selection, Recombination, or a Fresh Solve?&quot;, accepted at the COLM 2026 Workshop on Efficient Reasoning."
+      content="Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; author of a COLM 2026 Efficient Reasoning workshop paper."
     />
     <meta name="theme-color" content="#fbfaf7" />
     <meta name="author" content="Guiv Farmanfarmaian" />
+    <link rel="canonical" href="https://guivff.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Guiv Farmanfarmaian" />
+    <meta property="og:title" content="Guiv Farmanfarmaian | Machine Learning Researcher" />
+    <meta
+      property="og:description"
+      content="Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; author of a COLM 2026 Efficient Reasoning workshop paper."
+    />
+    <meta property="og:url" content="https://guivff.github.io/" />
+    <meta property="og:image" content="https://guivff.github.io/assets/guivff_pic.jpg" />
+    <meta property="og:image:alt" content="Portrait of Guiv Farmanfarmaian" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Guiv Farmanfarmaian | Machine Learning Researcher" />
+    <meta
+      name="twitter:description"
+      content="Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; author of a COLM 2026 Efficient Reasoning workshop paper."
+    />
+    <meta name="twitter:image" content="https://guivff.github.io/assets/guivff_pic.jpg" />
+
     <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +47,7 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#about" class="brand" aria-label="Homepage">
+        <a href="#top" class="brand" aria-label="Homepage">
           <span class="brand-mark" id="brand-mark">GF</span>
           <span class="brand-text" id="brand-text">Guiv Farmanfarmaian</span>
         </a>
@@ -47,10 +67,11 @@
         <div class="nav-wrap" id="nav-wrap">
           <nav class="site-nav" id="site-nav" aria-label="Primary">
             <a href="#about">About</a>
+            <a href="#current">Current</a>
             <a href="#publications">Publications</a>
             <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -83,39 +104,35 @@
     </header>
 
     <main id="main">
-      <section class="hero section" id="about">
+      <section class="hero section" id="top" aria-labelledby="hero-name">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow" id="hero-eyebrow">
-              ETH Zurich · Machine Intelligence · ML Research & Engineering
-            </p>
+            <p class="eyebrow" id="hero-eyebrow" hidden></p>
             <h1 id="hero-name">Guiv Farmanfarmaian</h1>
+            <p class="hero-role" id="hero-role">Machine Learning Researcher</p>
+            <p class="hero-tagline" id="hero-tagline">
+              Reasoning, reinforcement learning &amp; post-training for language models
+            </p>
             <div class="hero-intro prose" id="hero-intro"></div>
 
             <div class="hero-links" id="hero-links"></div>
-            <ul class="hero-meta" id="hero-meta"></ul>
+            <ul class="hero-meta" id="hero-meta" hidden></ul>
           </div>
 
-          <aside class="hero-panel reveal">
+          <aside class="hero-panel reveal" aria-label="At a glance">
             <div class="hero-portrait">
               <img
                 id="profile-image"
                 class="profile-image"
-                alt="Profile photo"
+                alt="Portrait of Guiv Farmanfarmaian"
+                width="336"
+                height="420"
+                decoding="async"
                 hidden
               />
             </div>
 
-            <div class="hero-side card">
-              <div class="spotlight">
-                <h2>Specialization</h2>
-                <p id="focus-summary">
-                  Reasoning in language models via reinforcement learning, post-training, and test-time recursion.
-                </p>
-              </div>
-
-              <dl class="facts" id="hero-facts"></dl>
-            </div>
+            <dl class="facts" id="hero-facts"></dl>
           </aside>
         </div>
       </section>
@@ -127,54 +144,83 @@
         </div>
       </section>
 
-      <section class="section" id="publications" tabindex="-1" hidden>
+      <section class="section section--about" id="about" aria-labelledby="about-heading">
+        <div class="container about-grid">
+          <div class="section-head section-head--side reveal">
+            <p class="section-kicker">About</p>
+            <h2 id="about-heading">Background</h2>
+          </div>
+          <div class="reveal">
+            <div class="prose about-prose" id="about-prose"></div>
+            <div class="interests" id="interests">
+              <h3 class="card-title">Research interests</h3>
+              <div class="tag-list tag-list--large" id="interest-tags"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--current" id="current" aria-labelledby="current-heading" hidden>
         <div class="container">
           <div class="pub-head reveal">
-            <h2 class="pub-head__title">Publications</h2>
+            <h2 class="pub-head__title" id="current-heading">Current</h2>
+            <p class="pub-head__note">What I am working on now</p>
+          </div>
+          <ol class="current-list reveal" id="current-list"></ol>
+        </div>
+      </section>
+
+      <section class="section" id="publications" tabindex="-1" aria-labelledby="publications-heading" hidden>
+        <div class="container">
+          <div class="pub-head reveal">
+            <h2 class="pub-head__title" id="publications-heading">Publications</h2>
             <p class="pub-head__note">Peer-reviewed and workshop papers</p>
           </div>
           <div class="pub-list reveal" id="publications-list"></div>
         </div>
       </section>
 
-      <section class="section section--compact">
+      <section class="section section--compact" id="highlights" hidden>
         <div class="container">
           <dl class="facts facts--row" id="highlights-grid"></dl>
         </div>
       </section>
 
-      <section class="section section--compact" id="interests">
-        <div class="container">
-          <div class="card reveal interests-card">
-            <h3 class="card-title">Current interests</h3>
-            <div class="tag-list tag-list--large" id="interest-tags"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="research">
+      <section class="section" id="research" aria-labelledby="research-heading">
         <div class="container">
           <div class="section-head reveal">
             <p class="section-kicker">Research</p>
-            <h2>Research projects</h2>
+            <h2 id="research-heading">Research</h2>
             <p class="section-lead">
-              Ongoing and recent research on reasoning in language models: RL post-training, learning on hard problems, test-time inference, and graph learning.
+              Ongoing programmes and completed thesis research on reasoning in language models: RL post-training, learning on hard problems, test-time inference, and graph learning.
             </p>
           </div>
 
-          <div class="projects-group reveal" id="featured-projects-block">
-            <div class="card-grid card-grid--featured" id="featured-projects-grid"></div>
-          </div>
+          <div id="research-groups"></div>
         </div>
       </section>
 
-      <section class="section" id="projects">
+      <section class="section" id="experience" aria-labelledby="experience-heading">
         <div class="container">
           <div class="section-head reveal">
-            <p class="section-kicker">Projects</p>
-            <h2>Academic and personal projects</h2>
+            <p class="section-kicker">Experience</p>
+            <h2 id="experience-heading">Experience</h2>
             <p class="section-lead">
-              A broader selection of academic and personal work across NLP, LLMs, genomics, graph learning, and sequence modeling.
+              Research, teaching, and industry roles.
+            </p>
+          </div>
+
+          <div class="timeline" id="experience-timeline"></div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-kicker">Selected projects</p>
+            <h2 id="projects-heading">Selected projects</h2>
+            <p class="section-lead">
+              Earlier academic projects across NLP, genomics, computer vision, and continual learning, with reports and code where available.
             </p>
           </div>
 
@@ -184,25 +230,22 @@
         </div>
       </section>
 
-      <section class="section" id="experience">
+      <section class="section" id="education" aria-labelledby="education-heading">
         <div class="container">
           <div class="section-head reveal">
-            <p class="section-kicker">Experience</p>
-            <h2>Experience</h2>
-            <p class="section-lead">
-              A selection of research and industry experience, including roles, projects, and technical work across machine learning and related areas.
-            </p>
+            <p class="section-kicker">Education</p>
+            <h2 id="education-heading">Education</h2>
           </div>
 
-          <div class="timeline" id="experience-timeline"></div>
+          <div class="timeline" id="education-timeline"></div>
         </div>
       </section>
 
-      <section class="section" id="notes">
+      <section class="section" id="notes" aria-labelledby="notes-heading">
         <div class="container">
           <div class="section-head reveal">
             <p class="section-kicker">Notes</p>
-            <h2>Notes</h2>
+            <h2 id="notes-heading">Notes</h2>
             <p class="section-lead">
               Technical notes, short write-ups, and research thoughts.
             </p>
@@ -212,14 +255,14 @@
         </div>
       </section>
 
-      <section class="section" id="contact">
+      <section class="section" id="contact" aria-labelledby="contact-heading">
         <div class="container">
           <div class="contact-card card reveal">
             <div>
               <p class="section-kicker">Contact</p>
-              <h2>Let's talk</h2>
+              <h2 id="contact-heading">Get in touch</h2>
               <p class="contact-copy" id="contact-copy">
-                I'm interested in ML research, research engineer, applied scientist, and ML engineer roles.
+                Happy to talk about reasoning in language models, reinforcement learning, and test-time inference. Email is the fastest way to reach me.
               </p>
             </div>
 

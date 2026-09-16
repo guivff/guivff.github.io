@@ -38,6 +38,19 @@
     if (el && value) el.href = value;
   }
 
+  // Sets text when a value is provided, otherwise hides the element so empty
+  // data fields never leave stray placeholder copy on the page.
+  function setTextOrHide(selector, value) {
+    const el = $(selector);
+    if (!el) return;
+    if (value) {
+      el.textContent = value;
+      el.hidden = false;
+    } else {
+      el.hidden = true;
+    }
+  }
+
   function buildButton(link, defaultStyle = "ghost") {
     const a = create("a");
     a.className = `button button--${link.style || defaultStyle}`;
@@ -95,23 +108,21 @@
     $("#brand-mark").textContent = shortName;
     $("#brand-text").textContent = name;
 
-    setText("#hero-eyebrow", personal?.eyebrow);
+    setTextOrHide("#hero-eyebrow", personal?.eyebrow);
     setText("#hero-name", name);
-    const heroTagline = $("#hero-tagline");
-    if (heroTagline) {
-      if (personal?.tagline) {
-        heroTagline.textContent = personal.tagline;
-        heroTagline.hidden = false;
-      } else {
-        heroTagline.hidden = true;
-      }
-    }
+    setTextOrHide("#hero-role", personal?.role);
+    setTextOrHide("#hero-tagline", personal?.tagline);
     setText("#focus-summary", personal?.focusSummary);
 
     if (cvLink) setHref("#header-cv-link", cvLink.href);
 
+    // Hero paragraphs come from `personal.intro`; fall back to `about` so older
+    // data files still render.
     const heroIntro = $("#hero-intro");
-    safeArray(data.about).forEach((paragraph) => {
+    const introParagraphs = safeArray(personal?.intro).length
+      ? safeArray(personal.intro)
+      : safeArray(data.about);
+    introParagraphs.forEach((paragraph) => {
       heroIntro.appendChild(create("p", "", paragraph));
     });
 
@@ -122,9 +133,13 @@
     });
 
     const heroMeta = $("#hero-meta");
-    safeArray(personal?.meta).forEach((item) => {
-      heroMeta.appendChild(create("li", "", item));
-    });
+    const metaItems = safeArray(personal?.meta);
+    if (heroMeta) {
+      metaItems.forEach((item) => {
+        heroMeta.appendChild(create("li", "", item));
+      });
+      heroMeta.hidden = !metaItems.length;
+    }
 
     const heroFacts = $("#hero-facts");
     heroFacts.className = "facts";
@@ -159,20 +174,41 @@
 
   function renderHighlights() {
     const wrap = $("#highlights-grid");
+    const section = $("#highlights");
     if (!wrap) return;
+    const highlights = safeArray(data.highlights);
+    if (!highlights.length) {
+      if (section) section.hidden = true;
+      return;
+    }
     wrap.className = "facts facts--row reveal";
-    safeArray(data.highlights).forEach((item) => {
+    highlights.forEach((item) => {
       wrap.appendChild(buildFactRow(item.label, item.value));
     });
+    if (section) section.hidden = false;
   }
 
   function renderAbout() {
+    const section = $("#about");
+    const prose = $("#about-prose");
+    const paragraphs = safeArray(data.about);
+    if (prose) {
+      paragraphs.forEach((paragraph) => {
+        prose.appendChild(create("p", "", paragraph));
+      });
+    }
+
     const interestTags = $("#interest-tags");
+    const interests = safeArray(data.interests);
     if (interestTags) {
-      safeArray(data.interests).forEach((interest) => {
+      interests.forEach((interest) => {
         interestTags.appendChild(create("span", "tag", interest));
       });
     }
+    const interestsBlock = $("#interests");
+    if (interestsBlock) interestsBlock.hidden = !interests.length;
+
+    if (section && !paragraphs.length && !interests.length) section.hidden = true;
 
     const goalList = $("#goal-list");
     if (goalList) {
@@ -182,12 +218,12 @@
     }
   }
 
-  function renderProjectList(projects, grid) {
+  function renderProjectList(projects, grid, options = {}) {
     safeArray(projects).forEach((project) => {
-      const card = create(
-        "article",
-        `card project-card reveal ${project.featured ? "project-card--featured" : ""}`.trim()
-      );
+      const classes = ["card", "project-card", "reveal"];
+      if (project.featured) classes.push("project-card--featured");
+      if (options.archived) classes.push("project-card--archived");
+      const card = create("article", classes.join(" "));
 
       if (project.category) {
         card.appendChild(create("p", "project-card__eyebrow", project.category));
@@ -219,7 +255,8 @@
       safeArray(project.tags).forEach((tag) => tags.appendChild(create("span", "tag", tag)));
       footer.appendChild(tags);
 
-      const links = safeArray(project.links);
+      // Placeholder links (`#` or empty) are hidden until a real URL exists.
+      const links = safeArray(project.links).filter(hasHref);
       if (links.length) {
         const linkRow = create("div", "link-row");
         links.forEach((link) => {
@@ -239,20 +276,116 @@
     const featured = projects.filter((project) => project.featured);
     const others = projects.filter((project) => !project.featured);
 
-    const featuredBlock = $("#featured-projects-block");
+    renderResearch(featured);
+
+    const otherSection = $("#projects");
     const otherBlock = $("#other-projects-block");
-    const featuredGrid = $("#featured-projects-grid");
     const otherGrid = $("#other-projects-grid");
 
-    if (!featured.length && featuredBlock) featuredBlock.hidden = true;
-    if (!others.length && otherBlock) otherBlock.hidden = true;
-
-    renderProjectList(featured, featuredGrid);
-    renderProjectList(others, otherGrid);
+    if (!others.length) {
+      if (otherBlock) otherBlock.hidden = true;
+      if (otherSection) otherSection.hidden = true;
+      return;
+    }
+    if (otherGrid) renderProjectList(others, otherGrid);
   }
 
-  function renderResearch() {
-    return;
+  // Research section: featured projects grouped by `group` (see
+  // `researchGroups` in site-data.js). Featured projects without a matching
+  // group are appended in a trailing, untitled group so nothing is lost.
+  function renderResearch(featured) {
+    const section = $("#research");
+    const wrap = $("#research-groups");
+    if (!wrap) return;
+
+    if (!featured.length) {
+      if (section) section.hidden = true;
+      return;
+    }
+
+    const groups = safeArray(data.researchGroups);
+    const byKey = new Map(groups.map((group) => [group.key, []]));
+    const ungrouped = [];
+    featured.forEach((project) => {
+      if (project.group && byKey.has(project.group)) {
+        byKey.get(project.group).push(project);
+      } else {
+        ungrouped.push(project);
+      }
+    });
+
+    const renderGroup = (group, items) => {
+      if (!items.length) return;
+      const block = create("div", "projects-group research-group reveal");
+      if (group?.archived) block.classList.add("research-group--archived");
+      if (group?.id) {
+        block.id = group.id;
+        block.tabIndex = -1;
+      }
+
+      if (group?.title) {
+        const head = create("div", "research-group__head");
+        const title = create("h3", "research-group__title");
+        const marker = create("span", "marker-square");
+        marker.setAttribute("aria-hidden", "true");
+        title.append(marker, document.createTextNode(group.title));
+        head.appendChild(title);
+        if (group.lead) head.appendChild(create("p", "research-group__lead", group.lead));
+        block.appendChild(head);
+      }
+
+      const grid = create("div", "card-grid card-grid--featured");
+      renderProjectList(items, grid, { archived: Boolean(group?.archived) });
+      block.appendChild(grid);
+      wrap.appendChild(block);
+    };
+
+    groups.forEach((group) => renderGroup(group, byKey.get(group.key)));
+    renderGroup(null, ungrouped);
+  }
+
+  // Compact "Current" list under the hero.
+  function renderCurrent() {
+    const section = $("#current");
+    const list = $("#current-list");
+    const items = safeArray(data.current);
+    if (!section || !list) return;
+
+    if (!items.length) {
+      section.hidden = true;
+      return;
+    }
+
+    items.forEach((item) => {
+      const li = create("li", "current-item");
+
+      const status = create("p", "current-item__status", item.status || "");
+      const body = create("div", "current-item__body");
+      const title = create("h3", "current-item__title");
+
+      if (hasHref({ href: item.href })) {
+        const link = create("a", "current-item__link", item.title || "");
+        link.href = item.href;
+        if (item.href.startsWith("http")) {
+          link.target = "_blank";
+          link.rel = "noreferrer";
+        }
+        if (item.linkLabel) {
+          link.appendChild(create("span", "visually-hidden", ` \u2014 ${item.linkLabel}`));
+        }
+        title.appendChild(link);
+      } else {
+        title.textContent = item.title || "";
+      }
+
+      body.appendChild(title);
+      if (item.text) body.appendChild(create("p", "current-item__text", item.text));
+
+      li.append(status, body);
+      list.appendChild(li);
+    });
+
+    section.hidden = false;
   }
 
   function hasHref(link) {
@@ -413,7 +546,7 @@
       }
 
       const body = create("div", "pub-entry__body");
-      body.appendChild(create("h4", "pub-entry__title", publication.title || "Untitled paper"));
+      body.appendChild(create("h3", "pub-entry__title", publication.title || "Untitled paper"));
 
       const byline = [publication.authors, publication.affiliation].filter(Boolean).join(" \u00b7 ");
       if (byline) body.appendChild(create("p", "pub-entry__authors", byline));
@@ -450,7 +583,14 @@
 
   function renderExperience() {
     const timeline = $("#experience-timeline");
-    safeArray(data.experience).forEach((item) => {
+    const section = $("#experience");
+    const items = safeArray(data.experience);
+    if (!timeline) return;
+    if (!items.length) {
+      if (section) section.hidden = true;
+      return;
+    }
+    items.forEach((item) => {
       const wrapper = create("div", "timeline-item reveal");
       const card = create("article", "timeline-card");
 
@@ -466,6 +606,43 @@
       safeArray(item.bullets).forEach((bullet) => bullets.appendChild(create("li", "", bullet)));
 
       card.append(top, org, summary, bullets);
+      wrapper.appendChild(card);
+      timeline.appendChild(wrapper);
+    });
+  }
+
+  function renderEducation() {
+    const section = $("#education");
+    const timeline = $("#education-timeline");
+    const items = safeArray(data.education);
+    if (!timeline) return;
+
+    if (!items.length) {
+      if (section) section.hidden = true;
+      return;
+    }
+
+    items.forEach((item) => {
+      const wrapper = create("div", "timeline-item reveal");
+      const card = create("article", "timeline-card");
+
+      const top = create("div", "timeline-item__top");
+      const degree = create("h3", "timeline-item__role", item.degree || "Degree");
+      const period = create("span", "timeline-item__period", item.period || "");
+      top.append(degree, period);
+
+      const org = create("div", "timeline-item__org", item.org || "");
+      card.append(top, org);
+
+      if (item.summary) card.appendChild(create("p", "muted", item.summary));
+
+      const bullets = safeArray(item.bullets);
+      if (bullets.length) {
+        const list = create("ul", "clean-list");
+        bullets.forEach((bullet) => list.appendChild(create("li", "", bullet)));
+        card.appendChild(list);
+      }
+
       wrapper.appendChild(card);
       timeline.appendChild(wrapper);
     });
@@ -551,12 +728,14 @@
 
   renderTheme();
   renderHeaderAndHero();
-  renderHighlights();
   renderNews();
   renderAbout();
+  renderCurrent();
   renderPublications();
+  renderHighlights();
   renderProjects();
   renderExperience();
+  renderEducation();
   renderNotes();
   renderContact();
   handleMobileNav();
