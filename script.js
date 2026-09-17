@@ -602,10 +602,15 @@
       const org = create("div", "timeline-item__org", item.org || "");
       const summary = create("p", "muted", item.summary || "");
 
-      const bullets = create("ul", "clean-list");
-      safeArray(item.bullets).forEach((bullet) => bullets.appendChild(create("li", "", bullet)));
+      card.append(top, org, summary);
 
-      card.append(top, org, summary, bullets);
+      const bulletItems = safeArray(item.bullets);
+      if (bulletItems.length) {
+        const bullets = create("ul", "clean-list");
+        bulletItems.forEach((bullet) => bullets.appendChild(create("li", "", bullet)));
+        card.appendChild(bullets);
+      }
+
       wrapper.appendChild(card);
       timeline.appendChild(wrapper);
     });

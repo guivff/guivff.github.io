@@ -61,7 +61,7 @@ window.siteData = {
     // background and motivation live in `about`.
     intro: [
       "I work on reasoning and reinforcement learning in language models, in particular RL post-training with RLVR/GRPO and test-time inference.",
-      "I completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich after a BSc in Mathematics. My current work includes independent research on RL post-training for reasoning models, SPAR Fall 2026, and Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability."
+      "I completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich after a BSc in Mathematics. My current work centres on independent research on RL post-training for reasoning models, alongside research programmes in RL distillation and mechanistic interpretability."
     ],
     heroFacts: [
       {
@@ -82,7 +82,7 @@ window.siteData = {
       },
       {
         label: "Citizenship",
-        value: "U.S. citizen"
+        value: "U.S. & Swiss citizen"
       }
     ],
     // Small uppercase line under the hero links. Empty hides it.
@@ -136,9 +136,9 @@ window.siteData = {
   // About section: concise background and broader motivation. Distinct from
   // the hero intro, which states who I am and what I research.
   about: [
-    "I am a machine-learning researcher working on reasoning in large language models. My route in ran through mathematics: after a BSc in Mathematics at ETH Zurich I moved to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve reasoning on hard problems with RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
-    "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. Alongside this I take part in SPAR Fall 2026, studying transfer in RL distillation, and in Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability.",
-    "More broadly, I am interested in how learning and inference procedures can produce systems that reason robustly and keep improving beyond static pretraining. Before returning to research I worked as a data scientist at Funding Circle in London. I am a U.S. citizen."
+    "I am a machine-learning researcher working on reasoning in large language models. My background is in mathematics: I completed a BSc in Mathematics at ETH Zurich before moving to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve reasoning on hard problems with RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
+    "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. More broadly, I am interested in reasoning, interpretability, and alignment: in how learning and inference procedures can produce systems that reason robustly, remain understandable, and keep improving beyond static pretraining.",
+    "Alongside my research, I work part-time on applied AI engineering and consulting. Before returning to research I worked as a data scientist at Funding Circle in London. I am a U.S. and Swiss citizen."
   ],
 
   interests: [
@@ -148,7 +148,8 @@ window.siteData = {
     "Test-time inference & inference-time compute",
     "Sparse- and hard-reward learning",
     "Training dynamics, diversity & mode collapse",
-    "Mechanistic interpretability"
+    "Mechanistic interpretability",
+    "AI safety & alignment"
   ],
 
   // Research groups rendered in the Research section, in order. Projects join a
@@ -189,7 +190,7 @@ window.siteData = {
       period: "Sep – Oct 2026",
       summary:
         "Selected for Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability, which includes a preparation period followed by a full-time research sprint.",
-      tags: ["Mechanistic interpretability", "MATS", "Model behaviour", "AI safety"],
+      tags: ["Mechanistic interpretability", "MATS", "Model behaviour"],
       featured: true,
       group: "current",
       links: []
@@ -349,6 +350,24 @@ window.siteData = {
   },
 
   experience: [
+    {
+      role: "AI Lead",
+      org: "Autolomous Ltd · London",
+      period: "Apr 2026 – present · part-time",
+      summary:
+        "Applied AI engineering and consulting for autoloMATE, a manufacturing execution system for cell and gene therapy production in GAMP-5 / 21 CFR Part 11 regulated environments.",
+      bullets: [
+        "Lead AI development for the product.",
+        "Build LLM-assisted workflows for regulated documentation, including URS-to-FS requirement mapping and traceability."
+      ]
+    },
+    {
+      role: "Swiss Civil Service",
+      org: "Switzerland",
+      period: "2026 – present",
+      summary: "Compulsory national service.",
+      bullets: []
+    },
     {
       role: "Master's Thesis Researcher",
       org: "ETH Zurich · Data Analytics Lab",
