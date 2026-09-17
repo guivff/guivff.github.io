@@ -600,9 +600,8 @@
       top.append(role, period);
 
       const org = create("div", "timeline-item__org", item.org || "");
-      const summary = create("p", "muted", item.summary || "");
-
-      card.append(top, org, summary);
+      card.append(top, org);
+      if (item.summary) card.appendChild(create("p", "muted", item.summary));
 
       const bulletItems = safeArray(item.bullets);
       if (bulletItems.length) {

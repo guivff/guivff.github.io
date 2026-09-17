@@ -352,12 +352,11 @@ window.siteData = {
   experience: [
     {
       role: "AI Engineering & Consulting",
-      org: "Applied AI · London",
+      org: "Applied AI · Remote",
       period: "Apr 2026 – present · part-time",
-      summary:
-        "Applied AI engineering and consulting for software used in regulated life-sciences manufacturing (GAMP-5 / 21 CFR Part 11 environments).",
+      summary: "",
       bullets: [
-        "Lead AI development for the product.",
+        "Lead AI development for a regulated-industry software product.",
         "Build LLM-assisted workflows for regulated documentation, including requirements mapping and traceability."
       ]
     },
