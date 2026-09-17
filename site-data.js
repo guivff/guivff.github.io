@@ -110,8 +110,7 @@ window.siteData = {
     {
       status: "MATS Winter 2027 · Sep – Oct 2026",
       title: "Neel Nanda Exploration Phase",
-      text:
-        "Mechanistic interpretability. Funded selection: 38 offers from approximately 888 applications.",
+      text: "Mechanistic interpretability research. Funded offer · ~4% selection rate.",
       href: "#research-current",
       linkLabel: "Programme entry"
     },
@@ -186,10 +185,10 @@ window.siteData = {
     },
     {
       title: "MATS Winter 2027 — Neel Nanda Exploration Phase",
-      category: "MATS Winter 2027 · Exploration Phase · mechanistic interpretability",
+      category: "MATS Winter 2027 · Exploration Phase · mechanistic interpretability research",
       period: "Sep – Oct 2026",
       summary:
-        "Selected for Neel Nanda’s funded MATS Winter 2027 Exploration Phase in mechanistic interpretability: 38 offers from approximately 888 applications (~4.3%). The programme includes a preparation phase followed by a full-time research sprint.",
+        "Selected for Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability, which includes a preparation period followed by a full-time research sprint.",
       tags: ["Mechanistic interpretability", "MATS", "Model behaviour", "AI safety"],
       featured: true,
       group: "current",
