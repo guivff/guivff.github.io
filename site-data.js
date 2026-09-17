@@ -352,13 +352,13 @@ window.siteData = {
   experience: [
     {
       role: "AI Engineering & Consulting",
-      org: "Autolomous Ltd · London",
+      org: "Applied AI · London",
       period: "Apr 2026 – present · part-time",
       summary:
-        "Applied AI engineering and consulting for autoloMATE, a manufacturing execution system for cell and gene therapy production in GAMP-5 / 21 CFR Part 11 regulated environments.",
+        "Applied AI engineering and consulting for software used in regulated life-sciences manufacturing (GAMP-5 / 21 CFR Part 11 environments).",
       bullets: [
         "Lead AI development for the product.",
-        "Build LLM-assisted workflows for regulated documentation, including URS-to-FS requirement mapping and traceability."
+        "Build LLM-assisted workflows for regulated documentation, including requirements mapping and traceability."
       ]
     },
     {
