@@ -2,7 +2,7 @@ window.siteData = {
   seo: {
     title: "Guiv Farmanfarmaian | Machine Learning Researcher",
     description:
-      "Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; author of a COLM 2026 Efficient Reasoning workshop paper.",
+      "Machine-learning researcher working on LLM reasoning, reinforcement-learning post-training, RLVR/GRPO, mechanistic interpretability, and test-time inference. MSc Computer Science and BSc Mathematics from ETH Zurich; COLM 2026 workshop author.",
     url: "https://guivff.github.io/",
     image: "https://guivff.github.io/assets/guivff_pic.jpg"
   },
@@ -54,14 +54,14 @@ window.siteData = {
     name: "Guiv Farmanfarmaian",
     shortName: "GF",
     // Optional mono label above the name. Empty hides it.
-    eyebrow: "",
+    eyebrow: "Machine Learning Research · LLM Reasoning · Reinforcement Learning",
     role: "Machine Learning Researcher",
     tagline: "Reasoning, reinforcement learning & post-training for language models",
     // Hero paragraphs: who I am and what I research. Keep to two short paragraphs;
     // background and motivation live in `about`.
     intro: [
       "I work on reasoning and reinforcement learning in language models, in particular RL post-training with RLVR/GRPO and test-time inference.",
-      "I recently completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich, following a BSc in Mathematics. I now pursue independent research on RL post-training for reasoning models and take part in SPAR Fall 2026."
+      "I completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich after a BSc in Mathematics. My current work includes independent research on RL post-training for reasoning models, SPAR Fall 2026, and Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability."
     ],
     heroFacts: [
       {
@@ -69,12 +69,20 @@ window.siteData = {
         value: "RL post-training / RLVR for reasoning models"
       },
       {
-        label: "Current programme",
+        label: "MATS",
+        value: "Neel Nanda Exploration Phase, Winter 2027"
+      },
+      {
+        label: "Research programme",
         value: "SPAR Fall 2026"
       },
       {
-        label: "Latest publication",
+        label: "Publication",
         value: "COLM 2026 Workshop on Efficient Reasoning"
+      },
+      {
+        label: "Citizenship",
+        value: "U.S. citizen"
       }
     ],
     // Small uppercase line under the hero links. Empty hides it.
@@ -100,16 +108,24 @@ window.siteData = {
       linkLabel: "Research entry"
     },
     {
+      status: "MATS Winter 2027 · Sep – Oct 2026",
+      title: "Neel Nanda Exploration Phase",
+      text:
+        "Mechanistic interpretability. Funded selection: 38 offers from approximately 888 applications.",
+      href: "#research-current",
+      linkLabel: "Programme entry"
+    },
+    {
       status: "SPAR Fall 2026",
       title: "Does Phantom transfer occur in RL distillation?",
-      text: "Collaborative research project with May Dixit.",
+      text: "RL-distillation research project with May Dixit.",
       href: "#research-current",
       linkLabel: "Project entry"
     },
     {
       status: "COLM 2026 · accepted Aug 2026",
       title: "Selection, Recombination, or a Fresh Solve?",
-      text: "Accepted at the COLM 2026 Workshop on Efficient Reasoning.",
+      text: "Candidate-free test-time aggregation paper, accepted at the COLM 2026 Workshop on Efficient Reasoning.",
       href: "#publications",
       linkLabel: "Publication entry"
     }
@@ -121,9 +137,9 @@ window.siteData = {
   // About section: concise background and broader motivation. Distinct from
   // the hero intro, which states who I am and what I research.
   about: [
-    "My route into machine learning ran through mathematics. After a BSc in Mathematics at ETH Zurich I moved to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve language-model reasoning on hard problems: RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
-    "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. Alongside this I am part of SPAR Fall 2026, studying transfer in RL distillation.",
-    "More broadly, I am interested in how learning and inference procedures can produce systems that reason robustly and keep improving beyond static pretraining. Before returning to research I worked as a data scientist at Funding Circle in London."
+    "I am a machine-learning researcher working on reasoning in large language models. My route in ran through mathematics: after a BSc in Mathematics at ETH Zurich I moved to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve reasoning on hard problems with RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
+    "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. Alongside this I take part in SPAR Fall 2026, studying transfer in RL distillation, and in Neel Nanda’s MATS Winter 2027 Exploration Phase in mechanistic interpretability.",
+    "More broadly, I am interested in how learning and inference procedures can produce systems that reason robustly and keep improving beyond static pretraining. Before returning to research I worked as a data scientist at Funding Circle in London. I am a U.S. citizen."
   ],
 
   interests: [
@@ -132,7 +148,8 @@ window.siteData = {
     "RLVR / GRPO",
     "Test-time inference & inference-time compute",
     "Sparse- and hard-reward learning",
-    "Training dynamics & diversity in post-training"
+    "Training dynamics, diversity & mode collapse",
+    "Mechanistic interpretability"
   ],
 
   // Research groups rendered in the Research section, in order. Projects join a
@@ -168,11 +185,22 @@ window.siteData = {
       links: []
     },
     {
+      title: "MATS Winter 2027 — Neel Nanda Exploration Phase",
+      category: "MATS Winter 2027 · Exploration Phase · mechanistic interpretability",
+      period: "Sep – Oct 2026",
+      summary:
+        "Selected for Neel Nanda’s funded MATS Winter 2027 Exploration Phase in mechanistic interpretability: 38 offers from approximately 888 applications (~4.3%). The programme includes a preparation phase followed by a full-time research sprint.",
+      tags: ["Mechanistic interpretability", "MATS", "Model behaviour", "AI safety"],
+      featured: true,
+      group: "current",
+      links: []
+    },
+    {
       title: "Does Phantom transfer occur in RL distillation?",
       category: "SPAR Fall 2026 · research participant · with May Dixit",
       period: "Fall 2026",
       summary:
-        "Collaborative project within SPAR Fall 2026, with May Dixit. We investigate whether behavioural or latent properties can transfer through RL-based distillation, and under what training conditions such transfer emerges.",
+        "Research project within the SPAR Fall 2026 programme, with May Dixit. We investigate whether behavioural or latent properties can transfer through RL-based distillation, and under what training conditions such transfer emerges.",
       tags: ["RL distillation", "Transfer", "Model behaviour", "AI safety"],
       featured: true,
       group: "current",
