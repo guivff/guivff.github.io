@@ -61,7 +61,7 @@ window.siteData = {
     // background and motivation live in `about`.
     intro: [
       "I work on reasoning and reinforcement learning in language models, in particular RL post-training with RLVR/GRPO and test-time inference.",
-      "I completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich after a BSc in Mathematics. My current work centres on independent research on RL post-training for reasoning models, alongside research programmes in RL distillation and mechanistic interpretability."
+      "I completed an MSc in Computer Science (Machine Intelligence) at ETH Zurich after a BSc in Mathematics, also at ETH Zurich. My current work centres on independent research on RL post-training for reasoning models, alongside research programmes in RL distillation and mechanistic interpretability."
     ],
     heroFacts: [
       {
