@@ -351,7 +351,7 @@ window.siteData = {
 
   experience: [
     {
-      role: "AI Lead",
+      role: "AI Engineering & Consulting",
       org: "Autolomous Ltd · London",
       period: "Apr 2026 – present · part-time",
       summary:
