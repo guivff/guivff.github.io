@@ -82,7 +82,7 @@ window.siteData = {
       },
       {
         label: "Citizenship",
-        value: "U.S. & Swiss citizen"
+        value: "U.S., Swiss & Canadian citizen"
       }
     ],
     // Small uppercase line under the hero links. Empty hides it.
@@ -138,7 +138,7 @@ window.siteData = {
   about: [
     "I am a machine-learning researcher working on reasoning in large language models. My background is in mathematics: I completed a BSc in Mathematics at ETH Zurich before moving to the Machine Intelligence track of the MSc in Computer Science, where my thesis studied how to improve reasoning on hard problems with RLVR in sparse-reward settings, teacher-hint and solution-prefix conditioning, and recursive test-time inference.",
     "That work led to my first publication, on test-time aggregation, and to the questions I now pursue independently: how RL post-training changes the repertoire of reasoning behaviours a model can express, when rare behaviours disappear, and how training choices trade task performance against diversity. More broadly, I am interested in reasoning, interpretability, and alignment: in how learning and inference procedures can produce systems that reason robustly, remain understandable, and keep improving beyond static pretraining.",
-    "Alongside my research, I work part-time on applied AI engineering and consulting. Before returning to research I worked as a data scientist at Funding Circle in London. I am a U.S. and Swiss citizen."
+    "Alongside my research, I work part-time on applied AI engineering and consulting. Before returning to research I worked as a data scientist at Funding Circle in London. I am a U.S., Swiss, and Canadian citizen."
   ],
 
   interests: [
